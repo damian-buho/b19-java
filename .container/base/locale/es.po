@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+# Copyright (C) 2026 b19
+#
+# SPDX-License-Identifier: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: b19-java\n"
+"Report-Msgid-Bugs-To: i18n@b19.dev\n"
+"POT-Creation-Date: 2026-05-02 16:15-0300\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: b19 team\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:21
+msgid "Seed truststore from %s"
+msgstr "Inicializar almacén de confianza desde %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:27
+msgid "Import %s as alias %s"
+msgstr "Importar %s con alias %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:39
+msgid "Custom truststore active: %s"
+msgstr "Almacén de confianza personalizado activo: %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:41
+msgid "No CA certificates in %s -- using system truststore"
+msgstr ""
+"Sin certificados CA en %s -- usando almacén de confianza del sistema"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:22
+msgid "Preserving existing JAVA_TOOL_OPTIONS: %s"
+msgstr "Conservando JAVA_TOOL_OPTIONS existente: %s"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:25
+msgid "JVM flags applied via JAVA_TOOL_OPTIONS from %s"
+msgstr "Opciones JVM aplicadas vía JAVA_TOOL_OPTIONS desde %s"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:28
+msgid "vm.options missing at %s -- JVM flags not applied"
+msgstr "vm.options ausente en %s -- opciones JVM no aplicadas"
+
+#: .container/base/build.d/base/post/200-install-java.sh:9
+msgid "Extract %s"
+msgstr "Extraer %s"
+
+#: .container/base/build.d/base/post/200-install-java.sh:16
+msgid "Remove Java source archive"
+msgstr "Eliminar archivo fuente de Java"
+
+#: .container/base/build.d/base/post/200-install-java.sh:17
+msgid "Remove jmods (jlink modules)"
+msgstr "Eliminar jmods (módulos jlink)"
+
+#~ msgid "Rendering vm.options for %s series"
+#~ msgstr "Generando vm.options para la serie %s"
+
+#~ msgid "Removing unused vmoptions templates"
+#~ msgstr "Eliminando plantillas vmoptions no utilizadas"

@@ -1,0 +1,17 @@
+{#
+SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+
+SPDX-License-Identifier: MIT
+#}
+
+#!/usr/bin/env bash
+
+  ACTUAL=$(get-java-version)
+  _raw=$(decomment < /deps/java/{{ ENV.B19_JAVA_DISTRO }}/{{ ENV.B19_JAVA_SERIES | int }}/version.deps)
+  EXPECTED="${_raw%%+*}"
+
+  if [ "${ACTUAL}" != "${EXPECTED}" ]
+  then
+    echo "FATAL: expected ${EXPECTED}, got ${ACTUAL}" >&2
+    exit 1
+  fi

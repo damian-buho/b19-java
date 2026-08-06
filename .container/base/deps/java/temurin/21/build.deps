@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+# Temurin build number — separated from the semver because the upstream
+# tarball spells it `%2B<build>` in the tag and `_<build>` in the file name.
+# Exposed to url.deps as ${M6E_UPSTREAM_BUILD}.
+8

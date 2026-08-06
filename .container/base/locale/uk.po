@@ -1,0 +1,65 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+# Copyright (C) 2026 b19
+#
+# SPDX-License-Identifier: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: b19-java\n"
+"Report-Msgid-Bugs-To: i18n@b19.dev\n"
+"POT-Creation-Date: 2026-05-02 16:15-0300\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: b19 team\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:21
+msgid "Seed truststore from %s"
+msgstr "Копіювання сховища довіри з %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:27
+msgid "Import %s as alias %s"
+msgstr "Імпорт %s з псевдонімом %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:39
+msgid "Custom truststore active: %s"
+msgstr "Активне власне сховище довіри: %s"
+
+#: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:41
+msgid "No CA certificates in %s -- using system truststore"
+msgstr ""
+"CA-сертифікати відсутні у %s -- використовується системне сховище довіри"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:22
+msgid "Preserving existing JAVA_TOOL_OPTIONS: %s"
+msgstr "Збереження існуючого JAVA_TOOL_OPTIONS: %s"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:25
+msgid "JVM flags applied via JAVA_TOOL_OPTIONS from %s"
+msgstr "Параметри JVM застосовано через JAVA_TOOL_OPTIONS з %s"
+
+#: .container/user/entrypoint.d/1150-apply-vmoptions.i.sh:28
+msgid "vm.options missing at %s -- JVM flags not applied"
+msgstr "vm.options відсутній у %s -- параметри JVM не застосовано"
+
+#: .container/base/build.d/base/post/200-install-java.sh:9
+msgid "Extract %s"
+msgstr "Розпакувати %s"
+
+#: .container/base/build.d/base/post/200-install-java.sh:16
+msgid "Remove Java source archive"
+msgstr "Видалити архів вихідного коду Java"
+
+#: .container/base/build.d/base/post/200-install-java.sh:17
+msgid "Remove jmods (jlink modules)"
+msgstr "Видалити jmods (модулі jlink)"
+
+#~ msgid "Rendering vm.options for %s series"
+#~ msgstr "Генерація vm.options для серії %s"
+
+#~ msgid "Removing unused vmoptions templates"
+#~ msgstr "Видалення невикористаних шаблонів vmoptions"

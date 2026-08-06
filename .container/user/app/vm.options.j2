@@ -1,0 +1,29 @@
+{#
+SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+
+SPDX-License-Identifier: MIT
+
+Production JVM flags — flattened into JAVA_TOOL_OPTIONS at startup.
+
+AlwaysPreTouch:  touch all heap pages at startup to avoid page faults during
+                 operation. Trades slower startup and higher RSS for
+                 predictable latency.
+DoEscapeAnalysis: JIT eliminates escape allocations on the stack.
+ExplicitGCInvokesConcurrent: System.gc() triggers concurrent collection,
+                             not a full STW pause.
+OptimizeStringConcat: JIT optimises StringBuilder.append chains.
+UseCompressedOops: use 32-bit compressed pointers (heap < 32 GB).
+UseStringDeduplication: deduplicate String objects across the heap (ZGC-aware).
+UseZGC: ZGC — low-latency, generational by default since JDK 21.
+B19_JAVA_XMS / B19_JAVA_XMX: heap floor/ceiling, override per image.
+#}
+
+-XX:+AlwaysPreTouch
+-XX:+DoEscapeAnalysis
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+OptimizeStringConcat
+-XX:+UseCompressedOops
+-XX:+UseStringDeduplication
+-XX:+UseZGC
+-Xms{{ ENV.B19_JAVA_XMS }}
+-Xmx{{ ENV.B19_JAVA_XMX }}

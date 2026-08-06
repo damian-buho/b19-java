@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+https://download.oracle.com/java/${M6E_SERIES}/archive/jdk-${M6E_UPSTREAM_VERSION}_linux-aarch64_bin.tar.gz

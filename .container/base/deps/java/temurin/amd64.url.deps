@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+https://github.com/adoptium/temurin${M6E_SERIES}-binaries/releases/download/jdk-${M6E_UPSTREAM_VERSION}%2B${M6E_UPSTREAM_BUILD}/OpenJDK${M6E_SERIES}U-jdk_x64_linux_hotspot_${M6E_UPSTREAM_VERSION}_${M6E_UPSTREAM_BUILD}.tar.gz

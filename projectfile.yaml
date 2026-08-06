@@ -1,0 +1,64 @@
+---
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+$schema: https://projectfile.org/schema/v1.json
+identity:
+  created: "2026-06-01"
+  name: java
+  summary: JDK runtime with Oracle and Temurin distributions
+  title: B19/Java
+includes:
+  - .makefile/b19/ci.yaml
+  - .makefile/b19/images/ubuntu.yaml
+  - https://kiota.ch/b19/metadata/raw/branch/main/include.yaml
+  - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
+kind: SoftwareSourceCode
+links:
+  - label: B19/Java on Codeberg
+    type: source-code
+    url: https://codeberg.org/b19/java
+  - label: B19/Java on GitHub
+    type: source-code
+    url: https://github.com/damian-buho/b19-java
+  - label: B19/Java on kiota.ch
+    type: source-code
+    url: https://kiota.ch/b19/java
+  - label: Issues on Codeberg
+    type: bugs
+    url: https://codeberg.org/b19/java/issues
+  - label: Issues on GitHub
+    type: bugs
+    url: https://github.com/damian-buho/b19-java/issues
+org:
+  b19:
+    scaffold:
+      root-stage: root
+  projectfile:
+    ci:
+      image: b19/java/{B19_JAVA_DISTRO}-{B19_JAVA_SERIES}
+      matrix:
+        axes:
+          B19_JAVA_DISTRO:
+            - oracle
+            - temurin
+          B19_JAVA_SERIES:
+            - 21
+            - 25
+            - 26
+    conventions:
+      fragments:
+        parents:
+          - url: ssh://git@kiota.ch/b19/ubuntu.git
+    status: maintained
+repositories:
+  - issues: true
+    role: mirror
+    type: git
+    url: ssh://git@codeberg.org/b19/java.git
+  - role: mirror
+    type: git
+    url: git@github.com:damian-buho/b19-java.git
+  - role: origin
+    type: git
+    url: ssh://git@kiota.ch/b19/java.git
