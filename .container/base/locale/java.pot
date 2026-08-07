@@ -4,16 +4,28 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: java development\n"
-"Report-Msgid-Bugs-To: i18n@b19.dev\n"
-"POT-Creation-Date: 2026-05-02 16:15-0300\n"
+"Project-Id-Version: java 1.0.0-4-g0327f2d\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/b19/java/issues\n"
+"POT-Creation-Date: 2026-08-07 22:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .container/base/build.d/base/post/200-install-java.sh:13
+msgid "Extract %s"
+msgstr ""
+
+#: .container/base/build.d/base/post/200-install-java.sh:20
+msgid "Remove Java source archive"
+msgstr ""
+
+#: .container/base/build.d/base/post/200-install-java.sh:21
+msgid "Remove jmods (jlink modules)"
+msgstr ""
 
 #: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:21
 msgid "Seed truststore from %s"
@@ -43,14 +55,6 @@ msgstr ""
 msgid "vm.options missing at %s -- JVM flags not applied"
 msgstr ""
 
-#: .container/base/build.d/base/post/200-install-java.sh:9
-msgid "Extract %s"
-msgstr ""
-
-#: .container/base/build.d/base/post/200-install-java.sh:16
-msgid "Remove Java source archive"
-msgstr ""
-
-#: .container/base/build.d/base/post/200-install-java.sh:17
-msgid "Remove jmods (jlink modules)"
+#: .container/user/test.d/1200-javac-compile-test.sh:26
+msgid "javac-%s compile test passed"
 msgstr ""
