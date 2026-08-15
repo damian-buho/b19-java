@@ -6,8 +6,9 @@ $schema: https://projectfile.org/schema/v1.json
 identity:
   created: "2026-06-01"
   name: java
-  summary: JDK runtime with Oracle and Temurin distributions
+  summary: Community-maintained distribution of Java based on B19/Ubuntu
   title: B19/Java
+  description: Community-maintained distribution of Java built on B19/Ubuntu. This repository holds only the packaging — Dockerfile, build scripts, and configuration, all MIT-licensed; the upstream Java is fetched at build time and retains its own licensing.
 includes:
   - .makefile/b19/ci.yaml
   - .makefile/b19/images/ubuntu.yaml
@@ -15,19 +16,47 @@ includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
 kind: SoftwareSourceCode
 links:
-  - label: B19/Java on Codeberg
+  - label:
+      en: B19/Java on Codeberg
+      es: B19/Java en Codeberg
+      uk: B19/Java на Codeberg
+    tags:
+      - public
+      - badges
+      - badges-gitea
     type: source-code
     url: https://codeberg.org/b19/java
-  - label: B19/Java on GitHub
+  - label:
+      en: B19/Java on GitHub
+      es: B19/Java en GitHub
+      uk: B19/Java на GitHub
+    tags:
+      - public
+      - badges
+      - badges-github
     type: source-code
     url: https://github.com/damian-buho/b19-java
-  - label: B19/Java on kiota.ch
+  - label:
+      en: B19/Java on kiota.ch
+      es: B19/Java en kiota.ch
+      uk: B19/Java на kiota.ch
+    preferred: true
     type: source-code
     url: https://kiota.ch/b19/java
-  - label: Issues on Codeberg
+  - label:
+      en: Issues on Codeberg
+      es: Incidencias en Codeberg
+      uk: Issues на Codeberg
+    tags:
+      - support
     type: bugs
     url: https://codeberg.org/b19/java/issues
-  - label: Issues on GitHub
+  - label:
+      en: Issues on GitHub
+      es: Incidencias en GitHub
+      uk: Issues на GitHub
+    tags:
+      - support
     type: bugs
     url: https://github.com/damian-buho/b19-java/issues
 org:
@@ -35,6 +64,11 @@ org:
     scaffold:
       root-stage: root
   projectfile:
+    image:
+      distro: "{B19_JAVA_DISTRO}"
+      series: "{B19_JAVA_SERIES}"
+      path: ${org}/${name}/${distro}-${series}
+      flatpath: ${org}-${name}-${distro}-${series}
     ci:
       image: b19/java/{B19_JAVA_DISTRO}-{B19_JAVA_SERIES}
       matrix:
@@ -62,3 +96,13 @@ repositories:
   - role: origin
     type: git
     url: ssh://git@kiota.ch/b19/java.git
+keywords:
+  - java
+  - jdk
+  - jvm
+  - language
+  - runtime
+  - docker
+technologies:
+  - java
+  - jvm
