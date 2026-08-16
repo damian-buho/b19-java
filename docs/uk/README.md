@@ -4,13 +4,13 @@ SPDX-License-Identifier: MIT
 pf-cli-managed: yes
 -->
 
-<!-- textlint-disable terminology -->
+<!-- textlint-disable terminology,common-misspellings -->
 
 [English](../../README.md) · [Español](../es/README.md)
 
 # B19/Java
 
-JDK runtime with Oracle and Temurin distributions
+Дистрибуція Java з підтримкою спільноти на основі B19/Ubuntu
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![License](https://img.shields.io/static/v1?label=license&message=MIT&color=4c1&style=flat-square)](LICENSE) ![Commit style](https://img.shields.io/static/v1?label=commits&message=conventional&color=blue&style=flat-square) ![Workflow](https://img.shields.io/static/v1?label=workflow&message=git-flow&color=blue&style=flat-square) ![Versioning](https://img.shields.io/static/v1?label=versioning&message=semantic&color=blue&style=flat-square) [![PRs welcome](https://img.shields.io/static/v1?label=PRs&message=welcome&color=4c1&style=flat-square)](CONTRIBUTING.md) [![Citation](https://img.shields.io/static/v1?label=citation&message=cff&color=blue&style=flat-square)](CITATION.cff) [![REUSE compliance](https://api.reuse.software/badge/codeberg.org/b19/java)](https://api.reuse.software/info/codeberg.org/b19/java)
 
@@ -20,9 +20,9 @@ JDK runtime with Oracle and Temurin distributions
 
 ## Можливості
 
-- Runtime CA certificate import
-- JDK from upstream tarball with distribution choice
-- Production-tuned JVM flags
+- Імпорт CA-сертифікатів під час виконання
+- JDK з upstream-тарбола з вибором дистрибутива
+- Прапорці JVM, налаштовані під продакшн
 - Persistent APT cache across builds
 - Service process management with log routing (b19-exec)
 - Cached artifact downloads with integrity verification (b19-fetch)
@@ -51,7 +51,7 @@ JDK runtime with Oracle and Temurin distributions
 - Pre-installed utility tools
 - XDG Base Directory paths
 
-Див. [FEATURES.md](../../FEATURES.md), щоб переглянути повний перелік.
+Див. [FEATURES.md](FEATURES.md), щоб переглянути повний перелік.
 
 ## Що надає цей проєкт
 
@@ -158,12 +158,18 @@ FROM docker.io/damianbuho/b19-java-temurin-26:latest
 
 ## Посилання
 
+### Проєкт
+
 - [Специфікація Projectfile](https://projectfile.org)
-- [B19/Java on Codeberg](https://codeberg.org/b19/java)
-- [B19/Java on GitHub](https://github.com/damian-buho/b19-java)
-- [B19/Java on kiota.ch](https://kiota.ch/b19/java)
-- [Issues on Codeberg](https://codeberg.org/b19/java/issues)
-- [Issues on GitHub](https://github.com/damian-buho/b19-java/issues)
+- [B19/Java на Codeberg](https://codeberg.org/b19/java)
+- [B19/Java на GitHub](https://github.com/damian-buho/b19-java)
+- [B19/Java на kiota.ch](https://kiota.ch/b19/java)
+- [Issues на Codeberg](https://codeberg.org/b19/java/issues)
+- [Issues на GitHub](https://github.com/damian-buho/b19-java/issues)
+
+### Інше
+
+- [Від автора](https://dbuho.me)
 
 ## Ліцензія
 

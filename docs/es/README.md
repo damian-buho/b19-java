@@ -4,13 +4,13 @@ SPDX-License-Identifier: MIT
 pf-cli-managed: yes
 -->
 
-<!-- textlint-disable terminology -->
+<!-- textlint-disable terminology,common-misspellings -->
 
 [English](../../README.md) · [Українська](../uk/README.md)
 
 # B19/Java
 
-JDK runtime with Oracle and Temurin distributions
+Distribución de Java mantenida por la comunidad, basada en B19/Ubuntu
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![License](https://img.shields.io/static/v1?label=license&message=MIT&color=4c1&style=flat-square)](LICENSE) ![Commit style](https://img.shields.io/static/v1?label=commits&message=conventional&color=blue&style=flat-square) ![Workflow](https://img.shields.io/static/v1?label=workflow&message=git-flow&color=blue&style=flat-square) ![Versioning](https://img.shields.io/static/v1?label=versioning&message=semantic&color=blue&style=flat-square) [![PRs welcome](https://img.shields.io/static/v1?label=PRs&message=welcome&color=4c1&style=flat-square)](CONTRIBUTING.md) [![Citation](https://img.shields.io/static/v1?label=citation&message=cff&color=blue&style=flat-square)](CITATION.cff) [![REUSE compliance](https://api.reuse.software/badge/codeberg.org/b19/java)](https://api.reuse.software/info/codeberg.org/b19/java)
 
@@ -20,9 +20,9 @@ JDK runtime with Oracle and Temurin distributions
 
 ## Características
 
-- Runtime CA certificate import
-- JDK from upstream tarball with distribution choice
-- Production-tuned JVM flags
+- Importación de certificados CA en runtime
+- JDK desde el tarball upstream con elección de distribución
+- Flags de JVM ajustados a producción
 - Persistent APT cache across builds
 - Service process management with log routing (b19-exec)
 - Cached artifact downloads with integrity verification (b19-fetch)
@@ -51,7 +51,7 @@ JDK runtime with Oracle and Temurin distributions
 - Pre-installed utility tools
 - XDG Base Directory paths
 
-Consulta [FEATURES.md](../../FEATURES.md) para ver la lista completa.
+Consulta [FEATURES.md](FEATURES.md) para ver la lista completa.
 
 ## Qué entrega este proyecto
 
@@ -158,12 +158,18 @@ Para el bucle de desarrollo local, `make dev-container` levanta el dev-container
 
 ## Enlaces
 
+### Proyecto
+
 - [Especificación de Projectfile](https://projectfile.org)
-- [B19/Java on Codeberg](https://codeberg.org/b19/java)
-- [B19/Java on GitHub](https://github.com/damian-buho/b19-java)
-- [B19/Java on kiota.ch](https://kiota.ch/b19/java)
-- [Issues on Codeberg](https://codeberg.org/b19/java/issues)
-- [Issues on GitHub](https://github.com/damian-buho/b19-java/issues)
+- [B19/Java en Codeberg](https://codeberg.org/b19/java)
+- [B19/Java en GitHub](https://github.com/damian-buho/b19-java)
+- [B19/Java en kiota.ch](https://kiota.ch/b19/java)
+- [Incidencias en Codeberg](https://codeberg.org/b19/java/issues)
+- [Incidencias en GitHub](https://github.com/damian-buho/b19-java/issues)
+
+### Otros
+
+- [Del autor](https://dbuho.me)
 
 ## Licencia
 
