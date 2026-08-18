@@ -4,9 +4,13 @@ SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
 SPDX-License-Identifier: MIT
 -->
 
+<!-- textlint-disable terminology,common-misspellings -->
+
 # JDK з upstream-тарбола з вибором дистрибутива
 
 - JDK встановлюється з upstream-тарболів (не з APT), зафіксований за дистрибутивом, серією та архітектурою з перевіркою SHA-512.
 - Доступні два дистрибутиви: Oracle JDK (випробуваний у продакшні, ліцензія OTN) і Eclipse Temurin (повністю відкрита збірка OpenJDK).
 - `jmods/` і `src.zip` вилучено з підсумкового образу, щоб зменшити розмір.
 - Містить `git` для інструментів збирання та розв’язання залежностей.
+
+<!-- textlint-enable -->

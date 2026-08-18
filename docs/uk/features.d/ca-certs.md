@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
 SPDX-License-Identifier: MIT
 -->
 
+<!-- textlint-disable terminology,common-misspellings -->
+
 # Імпорт CA-сертифікатів під час виконання
 
 - PEM-файли, покладені в `${B19_HOME}/ca-certs/`, імпортуються під час запуску контейнера в доступну для запису копію системного truststore (`${B19_HOME}/lib/security/cacerts`), яка містить усі системні кореневі сертифікати плюс імпортований.
@@ -11,3 +13,5 @@ SPDX-License-Identifier: MIT
 - Перебудовувати образ не потрібно — монтуйте або копіюйте сертифікати під час виконання.
 - Кожен сертифікат імпортується з ім’ям файлу як псевдонімом і з прапорцем `trustcacerts` (пароль системного truststore — `changeit`).
 - Хук імпорту успадковуваний, тож похідні образи на основі `b19/java` отримують ту саму поведінку автоматично.
+
+<!-- textlint-enable -->
