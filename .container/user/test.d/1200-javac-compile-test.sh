@@ -11,7 +11,7 @@
 
   TESTDIR=$(mktemp -d)
 
-  JAVA_VERSION=$(java -version 2>&1 | head -n1 | grep -oP '\d+\.\d+' | head -1)
+  JAVA_VERSION=$(get-java-version)
 
   cat > "${TESTDIR}/HelloWorld.java" << 'EOF'
 public class HelloWorld {
