@@ -5,4 +5,5 @@
 # SPDX-License-Identifier: MIT
 
   set -e
-  java --version | grep -oP -m1 '\d+\.\d+\.\d+'
+  # Match every dotted component: Oracle patch releases carry a fourth one (21.0.12.1), Temurin three
+  java --version | grep -oP -m1 '\d+(?:\.\d+)+'
