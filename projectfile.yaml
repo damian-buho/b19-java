@@ -20,6 +20,13 @@ includes:
   - .makefile/b19/images/ubuntu.yaml
   - https://kiota.ch/b19/metadata/raw/branch/main/include.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
+keywords:
+  - java
+  - jdk
+  - jvm
+  - language
+  - runtime
+  - docker
 kind: SoftwareSourceCode
 links:
   - label:
@@ -102,13 +109,6 @@ repositories:
   - role: origin
     type: git
     url: ssh://git@kiota.ch/b19/java.git
-keywords:
-  - java
-  - jdk
-  - jvm
-  - language
-  - runtime
-  - docker
 technologies:
   - java
   - jvm
