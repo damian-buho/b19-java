@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: java 1.0.0-4-g0327f2d\n"
+"Project-Id-Version: java 1.1.7\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/b19/java/issues\n"
-"POT-Creation-Date: 2026-08-07 22:10+0000\n"
+"POT-Creation-Date: 2026-09-07 03:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
