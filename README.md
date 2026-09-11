@@ -54,52 +54,9 @@ Community-maintained distribution of Java based on B19/Ubuntu
 
 See [FEATURES.md](FEATURES.md) for the full list.
 
-## What this provides
-
-- **Container image** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
-- **Container image** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
-- **Container image** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
-- **Container image** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
-- **Container image** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
-- **Container image** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
-- **Container image** `docker.io/damianbuho/b19-java-oracle-21:latest`
-- **Container image** `docker.io/damianbuho/b19-java-oracle-25:latest`
-- **Container image** `docker.io/damianbuho/b19-java-oracle-26:latest`
-- **Container image** `docker.io/damianbuho/b19-java-temurin-21:latest`
-- **Container image** `docker.io/damianbuho/b19-java-temurin-25:latest`
-- **Container image** `docker.io/damianbuho/b19-java-temurin-26:latest`
-
 ## Installation
 
-Pull the published container image:
-
-### Pull from GHCR
-
-```sh
-docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
-docker pull ghcr.io/damian-buho/b19/java/oracle-25:latest
-docker pull ghcr.io/damian-buho/b19/java/oracle-26:latest
-docker pull ghcr.io/damian-buho/b19/java/temurin-21:latest
-docker pull ghcr.io/damian-buho/b19/java/temurin-25:latest
-docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
-```
-
-### Pull from DockerHub
-
-```sh
-docker pull docker.io/damianbuho/b19-java-oracle-21:latest
-docker pull docker.io/damianbuho/b19-java-oracle-25:latest
-docker pull docker.io/damianbuho/b19-java-oracle-26:latest
-docker pull docker.io/damianbuho/b19-java-temurin-21:latest
-docker pull docker.io/damianbuho/b19-java-temurin-25:latest
-docker pull docker.io/damianbuho/b19-java-temurin-26:latest
-```
-
-Stable releases also publish `X.Y.Z`, `X.Y` and `X` tags — pull the precision you want to pin.
-
 If the registries above are unreachable, pull from the origin instead:
-
-### Pull from Kiota
 
 ```sh
 docker pull kiota.ch/b19/java/oracle-21:latest
@@ -109,34 +66,6 @@ docker pull kiota.ch/b19/java/temurin-21:latest
 docker pull kiota.ch/b19/java/temurin-25:latest
 docker pull kiota.ch/b19/java/temurin-26:latest
 ```
-
-## Usage
-
-Build on top of this image:
-
-### From GHCR
-
-```dockerfile
-FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
-FROM ghcr.io/damian-buho/b19/java/oracle-25:latest
-FROM ghcr.io/damian-buho/b19/java/oracle-26:latest
-FROM ghcr.io/damian-buho/b19/java/temurin-21:latest
-FROM ghcr.io/damian-buho/b19/java/temurin-25:latest
-FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
-```
-
-### From DockerHub
-
-```dockerfile
-FROM docker.io/damianbuho/b19-java-oracle-21:latest
-FROM docker.io/damianbuho/b19-java-oracle-25:latest
-FROM docker.io/damianbuho/b19-java-oracle-26:latest
-FROM docker.io/damianbuho/b19-java-temurin-21:latest
-FROM docker.io/damianbuho/b19-java-temurin-25:latest
-FROM docker.io/damianbuho/b19-java-temurin-26:latest
-```
-
-For the recommended multi-stage pattern and the build-hook system (build.d), scaffold a derivative with `b19/scripts/scaffold.sh` from [m6e/b19](https://kiota.ch/m6e/b19).
 
 ## Building
 
