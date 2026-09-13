@@ -8,7 +8,7 @@ pf-cli-managed: yes
 
 [English](../../README.md) · [Українська](../uk/README.md)
 
-# B19/Java
+# B19 / Java
 
 Distribución de Java mantenida por la comunidad, basada en B19/Ubuntu
 

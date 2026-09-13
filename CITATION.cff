@@ -9,7 +9,7 @@
 cff-version: 1.2.0
 message: Please cite this software using the metadata from this file.
 type: software
-title: B19/Java
+title: B19 / Java
 abstract: Community-maintained distribution of Java based on B19/Ubuntu
 authors:
   - family-names: Búho
@@ -32,3 +32,4 @@ keywords:
   - language
   - runtime
   - docker
+version: 1.1.7
