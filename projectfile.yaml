@@ -29,50 +29,6 @@ keywords:
   - runtime
   - docker
 kind: SoftwareSourceCode
-links:
-  - label:
-      en: B19/Java on Codeberg
-      es: B19/Java en Codeberg
-      uk: B19/Java на Codeberg
-    tags:
-      - public
-      - badges
-      - badges-gitea
-    type: source-code
-    url: https://codeberg.org/b19/java
-  - label:
-      en: B19/Java on GitHub
-      es: B19/Java en GitHub
-      uk: B19/Java на GitHub
-    tags:
-      - public
-      - badges
-      - badges-github
-    type: source-code
-    url: https://github.com/damian-buho/b19-java
-  - label:
-      en: B19/Java on kiota.ch
-      es: B19/Java en kiota.ch
-      uk: B19/Java на kiota.ch
-    preferred: true
-    type: source-code
-    url: https://kiota.ch/b19/java
-  - label:
-      en: Issues on Codeberg
-      es: Incidencias en Codeberg
-      uk: Issues на Codeberg
-    tags:
-      - support
-    type: bugs
-    url: https://codeberg.org/b19/java/issues
-  - label:
-      en: Issues on GitHub
-      es: Incidencias en GitHub
-      uk: Issues на GitHub
-    tags:
-      - support
-    type: bugs
-    url: https://github.com/damian-buho/b19-java/issues
 org:
   b19:
     scaffold:
@@ -99,18 +55,19 @@ org:
         parents:
           - url: ssh://git@kiota.ch/b19/ubuntu.git
     status: maintained
+technologies:
+  - java
+  - jvm
+links:
+  - label:
+      en: B19 / Java on kiota.ch
+      es: B19 / Java en kiota.ch
+      uk: B19 / Java на kiota.ch
+    preferred: true
+    type: source-code
+    url: https://kiota.ch/b19/java
 repositories:
-  - issues: true
-    role: mirror
-    type: git
-    url: ssh://git@codeberg.org/b19/java.git
-  - role: mirror
-    type: git
-    url: git@github.com:damian-buho/b19-java.git
   - branch: main
     role: origin
     type: git
     url: ssh://git@kiota.ch/b19/java.git
-technologies:
-  - java
-  - jvm
