@@ -29,6 +29,14 @@ keywords:
   - runtime
   - docker
 kind: SoftwareSourceCode
+links:
+  - label:
+      en: B19 / Java on kiota.ch
+      es: B19 / Java en kiota.ch
+      uk: B19 / Java на kiota.ch
+    preferred: true
+    type: source-code
+    url: https://kiota.ch/b19/java
 org:
   b19:
     scaffold:
@@ -55,19 +63,11 @@ org:
         parents:
           - url: ssh://git@kiota.ch/b19/ubuntu.git
     status: maintained
-technologies:
-  - java
-  - jvm
-links:
-  - label:
-      en: B19 / Java on kiota.ch
-      es: B19 / Java en kiota.ch
-      uk: B19 / Java на kiota.ch
-    preferred: true
-    type: source-code
-    url: https://kiota.ch/b19/java
 repositories:
   - branch: main
     role: origin
     type: git
     url: ssh://git@kiota.ch/b19/java.git
+technologies:
+  - java
+  - jvm
