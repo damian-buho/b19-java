@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
 - El suelo y el techo del heap se parametrizan con `B19_JAVA_XMS` (por defecto `512m`) y `B19_JAVA_XMX` (por defecto `2048m`), interpolados en la plantilla al renderizar; no hace falta recompilar.
 - Establece `JAVA_TOOL_OPTIONS` explícitamente para sobrescribir por completo los flags aplicados automáticamente.
 
-## Heredado de B19/Ubuntu
+## Heredado de B19 / Ubuntu
 
 ### Caché APT persistente entre compilaciones
 
