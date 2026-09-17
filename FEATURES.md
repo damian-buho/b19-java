@@ -32,7 +32,7 @@ SPDX-License-Identifier: MIT
 - Heap floor/ceiling are parameterized by `B19_JAVA_XMS` (default `512m`) and `B19_JAVA_XMX` (default `2048m`), interpolated into the template at render time -- no rebuild needed.
 - Set `JAVA_TOOL_OPTIONS` explicitly to override the auto-applied flags entirely.
 
-## Inherited from B19/Ubuntu
+## Inherited from B19 / Ubuntu
 
 ### Persistent APT cache across builds
 
