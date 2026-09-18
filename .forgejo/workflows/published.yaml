@@ -341,7 +341,7 @@ jobs:
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
         B19_JAVA_SERIES: ["21", "25", "26"]
-        M6E_PUBLISH_SINK: ["dockerhub", "kiota"]
+        M6E_PUBLISH_SINK: ["kiota", "dockerhub"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}
@@ -380,8 +380,8 @@ jobs:
           # the sink that declared it — so one archive lands under whatever path grammar
           # each registry wants. Credentials key on the SINK name.
           refs: |
-            dockerhub docker.io/damianbuho/b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:latest
             kiota kiota.ch/b19/java/${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:latest
+            dockerhub docker.io/damianbuho/b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:latest
           # This CELL's destination, off the publish axis: the job runs one cell per
           # place the archive goes, so a registry refusing a push fails only its own.
           sink: ${{ matrix.M6E_PUBLISH_SINK }}
