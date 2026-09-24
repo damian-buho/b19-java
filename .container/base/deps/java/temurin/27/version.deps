@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+# Temurin 27 EA uses simplified version format (27 not 27.0.0.0) in URL
+# Update this when a full release with version suffix is available
+27

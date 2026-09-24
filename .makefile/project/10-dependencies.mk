@@ -58,6 +58,24 @@ $(FETCH_PATH)/.oracle.26.0.2.1.arm64.stamp: .container/base/deps/java/oracle/arm
 
 PREREQUISITES += .container/base/deps/java/oracle/26/arm64.hash.deps
 
+$(FETCH_PATH)/.oracle.27.amd64.stamp: .container/base/deps/java/oracle/amd64.url.deps .container/base/deps/java/oracle/27/version.deps
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/oracle
+	touch $@
+
+.container/base/deps/java/oracle/27/amd64.hash.deps: $(FETCH_PATH)/.oracle.27.amd64.stamp
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/update-hash.sh java/oracle
+
+PREREQUISITES += .container/base/deps/java/oracle/27/amd64.hash.deps
+
+$(FETCH_PATH)/.oracle.27.arm64.stamp: .container/base/deps/java/oracle/arm64.url.deps .container/base/deps/java/oracle/27/version.deps
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/fetch.sh java/oracle
+	touch $@
+
+.container/base/deps/java/oracle/27/arm64.hash.deps: $(FETCH_PATH)/.oracle.27.arm64.stamp
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/oracle
+
+PREREQUISITES += .container/base/deps/java/oracle/27/arm64.hash.deps
+
 $(FETCH_PATH)/.temurin.21.0.12.1.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/21/version.deps .container/base/deps/java/temurin/21/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=21 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
@@ -111,4 +129,22 @@ $(FETCH_PATH)/.temurin.26.0.2.1.arm64.stamp: .container/base/deps/java/temurin/a
 	M6E_DEPS_STAGE=base M6E_SERIES=26 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/26/arm64.hash.deps
+
+$(FETCH_PATH)/.temurin.27.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/temurin
+	touch $@
+
+.container/base/deps/java/temurin/27/amd64.hash.deps: $(FETCH_PATH)/.temurin.27.amd64.stamp
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/update-hash.sh java/temurin
+
+PREREQUISITES += .container/base/deps/java/temurin/27/amd64.hash.deps
+
+$(FETCH_PATH)/.temurin.27.arm64.stamp: .container/base/deps/java/temurin/arm64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/fetch.sh java/temurin
+	touch $@
+
+.container/base/deps/java/temurin/27/arm64.hash.deps: $(FETCH_PATH)/.temurin.27.arm64.stamp
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/temurin
+
+PREREQUISITES += .container/base/deps/java/temurin/27/arm64.hash.deps
 

@@ -63,15 +63,19 @@ Consulta [FEATURES.md](FEATURES.md) para ver la lista completa.
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-27:latest`
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
 - **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-27:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-oracle-21:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-oracle-25:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-oracle-26:latest`
+- **Imagen de contenedor** `docker.io/damianbuho/b19-java-oracle-27:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-temurin-21:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-temurin-25:latest`
 - **Imagen de contenedor** `docker.io/damianbuho/b19-java-temurin-26:latest`
+- **Imagen de contenedor** `docker.io/damianbuho/b19-java-temurin-27:latest`
 
 ## Instalación
 
@@ -83,9 +87,11 @@ Descarga la imagen de contenedor publicada:
 docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-25:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-26:latest
+docker pull ghcr.io/damian-buho/b19/java/oracle-27:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-21:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-25:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
+docker pull ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### Descargar de DockerHub
@@ -94,9 +100,11 @@ docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
 docker pull docker.io/damianbuho/b19-java-oracle-21:latest
 docker pull docker.io/damianbuho/b19-java-oracle-25:latest
 docker pull docker.io/damianbuho/b19-java-oracle-26:latest
+docker pull docker.io/damianbuho/b19-java-oracle-27:latest
 docker pull docker.io/damianbuho/b19-java-temurin-21:latest
 docker pull docker.io/damianbuho/b19-java-temurin-25:latest
 docker pull docker.io/damianbuho/b19-java-temurin-26:latest
+docker pull docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 Las versiones estables también publican las etiquetas `X.Y.Z`, `X.Y` y `X`: descarga el nivel de precisión que quieras fijar.
@@ -109,9 +117,11 @@ Si los registros anteriores no están disponibles, descarga desde el origen:
 docker pull kiota.ch/b19/java/oracle-21:latest
 docker pull kiota.ch/b19/java/oracle-25:latest
 docker pull kiota.ch/b19/java/oracle-26:latest
+docker pull kiota.ch/b19/java/oracle-27:latest
 docker pull kiota.ch/b19/java/temurin-21:latest
 docker pull kiota.ch/b19/java/temurin-25:latest
 docker pull kiota.ch/b19/java/temurin-26:latest
+docker pull kiota.ch/b19/java/temurin-27:latest
 ```
 
 ## Uso
@@ -124,9 +134,11 @@ Construye sobre esta imagen:
 FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-25:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-26:latest
+FROM ghcr.io/damian-buho/b19/java/oracle-27:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-21:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-25:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
+FROM ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### Desde DockerHub
@@ -135,9 +147,11 @@ FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
 FROM docker.io/damianbuho/b19-java-oracle-21:latest
 FROM docker.io/damianbuho/b19-java-oracle-25:latest
 FROM docker.io/damianbuho/b19-java-oracle-26:latest
+FROM docker.io/damianbuho/b19-java-oracle-27:latest
 FROM docker.io/damianbuho/b19-java-temurin-21:latest
 FROM docker.io/damianbuho/b19-java-temurin-25:latest
 FROM docker.io/damianbuho/b19-java-temurin-26:latest
+FROM docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 Para el patrón multietapa recomendado y el sistema de hooks de compilación (build.d), genera un derivado con `b19/scripts/scaffold.sh` de [m6e/b19](https://kiota.ch/m6e/b19).

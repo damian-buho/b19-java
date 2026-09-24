@@ -63,15 +63,19 @@ pf-cli-managed: yes
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-27:latest`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-27:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-oracle-21:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-oracle-25:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-oracle-26:latest`
+- **Образ контейнера** `docker.io/damianbuho/b19-java-oracle-27:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-temurin-21:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-temurin-25:latest`
 - **Образ контейнера** `docker.io/damianbuho/b19-java-temurin-26:latest`
+- **Образ контейнера** `docker.io/damianbuho/b19-java-temurin-27:latest`
 
 ## Встановлення
 
@@ -83,9 +87,11 @@ pf-cli-managed: yes
 docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-25:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-26:latest
+docker pull ghcr.io/damian-buho/b19/java/oracle-27:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-21:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-25:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
+docker pull ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### Завантажити з DockerHub
@@ -94,9 +100,11 @@ docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
 docker pull docker.io/damianbuho/b19-java-oracle-21:latest
 docker pull docker.io/damianbuho/b19-java-oracle-25:latest
 docker pull docker.io/damianbuho/b19-java-oracle-26:latest
+docker pull docker.io/damianbuho/b19-java-oracle-27:latest
 docker pull docker.io/damianbuho/b19-java-temurin-21:latest
 docker pull docker.io/damianbuho/b19-java-temurin-25:latest
 docker pull docker.io/damianbuho/b19-java-temurin-26:latest
+docker pull docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 Стабільні випуски також публікують теґи `X.Y.Z`, `X.Y` і `X` — завантажте той рівень точності, який хочете зафіксувати.
@@ -109,9 +117,11 @@ docker pull docker.io/damianbuho/b19-java-temurin-26:latest
 docker pull kiota.ch/b19/java/oracle-21:latest
 docker pull kiota.ch/b19/java/oracle-25:latest
 docker pull kiota.ch/b19/java/oracle-26:latest
+docker pull kiota.ch/b19/java/oracle-27:latest
 docker pull kiota.ch/b19/java/temurin-21:latest
 docker pull kiota.ch/b19/java/temurin-25:latest
 docker pull kiota.ch/b19/java/temurin-26:latest
+docker pull kiota.ch/b19/java/temurin-27:latest
 ```
 
 ## Використання
@@ -124,9 +134,11 @@ docker pull kiota.ch/b19/java/temurin-26:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-25:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-26:latest
+FROM ghcr.io/damian-buho/b19/java/oracle-27:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-21:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-25:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
+FROM ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### З DockerHub
@@ -135,9 +147,11 @@ FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
 FROM docker.io/damianbuho/b19-java-oracle-21:latest
 FROM docker.io/damianbuho/b19-java-oracle-25:latest
 FROM docker.io/damianbuho/b19-java-oracle-26:latest
+FROM docker.io/damianbuho/b19-java-oracle-27:latest
 FROM docker.io/damianbuho/b19-java-temurin-21:latest
 FROM docker.io/damianbuho/b19-java-temurin-25:latest
 FROM docker.io/damianbuho/b19-java-temurin-26:latest
+FROM docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 Для рекомендованого багатоетапного шаблону та системи хуків збірки (build.d) створіть похідний проєкт за допомогою `b19/scripts/scaffold.sh` з [m6e/b19](https://kiota.ch/m6e/b19).

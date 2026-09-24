@@ -28,7 +28,7 @@ jobs:
     strategy:
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
-        B19_JAVA_SERIES: ["21", "25", "26"]
+        B19_JAVA_SERIES: ["21", "25", "26", "27"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}

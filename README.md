@@ -61,15 +61,19 @@ See [FEATURES.md](FEATURES.md) for the full list.
 - **Container image** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
 - **Container image** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
 - **Container image** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
+- **Container image** `ghcr.io/damian-buho/b19/java/oracle-27:latest`
 - **Container image** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
 - **Container image** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
 - **Container image** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
+- **Container image** `ghcr.io/damian-buho/b19/java/temurin-27:latest`
 - **Container image** `docker.io/damianbuho/b19-java-oracle-21:latest`
 - **Container image** `docker.io/damianbuho/b19-java-oracle-25:latest`
 - **Container image** `docker.io/damianbuho/b19-java-oracle-26:latest`
+- **Container image** `docker.io/damianbuho/b19-java-oracle-27:latest`
 - **Container image** `docker.io/damianbuho/b19-java-temurin-21:latest`
 - **Container image** `docker.io/damianbuho/b19-java-temurin-25:latest`
 - **Container image** `docker.io/damianbuho/b19-java-temurin-26:latest`
+- **Container image** `docker.io/damianbuho/b19-java-temurin-27:latest`
 
 ## Installation
 
@@ -81,9 +85,11 @@ Pull the published container image:
 docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-25:latest
 docker pull ghcr.io/damian-buho/b19/java/oracle-26:latest
+docker pull ghcr.io/damian-buho/b19/java/oracle-27:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-21:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-25:latest
 docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
+docker pull ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### Pull from DockerHub
@@ -92,9 +98,11 @@ docker pull ghcr.io/damian-buho/b19/java/temurin-26:latest
 docker pull docker.io/damianbuho/b19-java-oracle-21:latest
 docker pull docker.io/damianbuho/b19-java-oracle-25:latest
 docker pull docker.io/damianbuho/b19-java-oracle-26:latest
+docker pull docker.io/damianbuho/b19-java-oracle-27:latest
 docker pull docker.io/damianbuho/b19-java-temurin-21:latest
 docker pull docker.io/damianbuho/b19-java-temurin-25:latest
 docker pull docker.io/damianbuho/b19-java-temurin-26:latest
+docker pull docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 Stable releases also publish `X.Y.Z`, `X.Y` and `X` tags — pull the precision you want to pin.
@@ -107,9 +115,11 @@ If the registries above are unreachable, pull from the origin instead:
 docker pull kiota.ch/b19/java/oracle-21:latest
 docker pull kiota.ch/b19/java/oracle-25:latest
 docker pull kiota.ch/b19/java/oracle-26:latest
+docker pull kiota.ch/b19/java/oracle-27:latest
 docker pull kiota.ch/b19/java/temurin-21:latest
 docker pull kiota.ch/b19/java/temurin-25:latest
 docker pull kiota.ch/b19/java/temurin-26:latest
+docker pull kiota.ch/b19/java/temurin-27:latest
 ```
 
 ## Usage
@@ -122,9 +132,11 @@ Build on top of this image:
 FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-25:latest
 FROM ghcr.io/damian-buho/b19/java/oracle-26:latest
+FROM ghcr.io/damian-buho/b19/java/oracle-27:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-21:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-25:latest
 FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
+FROM ghcr.io/damian-buho/b19/java/temurin-27:latest
 ```
 
 ### From DockerHub
@@ -133,9 +145,11 @@ FROM ghcr.io/damian-buho/b19/java/temurin-26:latest
 FROM docker.io/damianbuho/b19-java-oracle-21:latest
 FROM docker.io/damianbuho/b19-java-oracle-25:latest
 FROM docker.io/damianbuho/b19-java-oracle-26:latest
+FROM docker.io/damianbuho/b19-java-oracle-27:latest
 FROM docker.io/damianbuho/b19-java-temurin-21:latest
 FROM docker.io/damianbuho/b19-java-temurin-25:latest
 FROM docker.io/damianbuho/b19-java-temurin-26:latest
+FROM docker.io/damianbuho/b19-java-temurin-27:latest
 ```
 
 For the recommended multi-stage pattern and the build-hook system (build.d), scaffold a derivative with `b19/scripts/scaffold.sh` from [m6e/b19](https://kiota.ch/m6e/b19).

@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+# Oracle JDK 27 EA uses unversioned URL pattern (jdk-27_... not jdk-27.0.0.0_...)
+# Update this when a full release with version suffix is available
+27

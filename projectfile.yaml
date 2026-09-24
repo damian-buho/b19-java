@@ -84,6 +84,12 @@ links:
       es: Paquetes en GHCR
       uk: Пакунки на GHCR
     type: package-registry
+    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Foracle-27
+  - label:
+      en: Packages on GHCR
+      es: Paquetes en GHCR
+      uk: Пакунки на GHCR
+    type: package-registry
     url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-21
   - label:
       en: Packages on GHCR
@@ -97,6 +103,12 @@ links:
       uk: Пакунки на GHCR
     type: package-registry
     url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-26
+  - label:
+      en: Packages on GHCR
+      es: Paquetes en GHCR
+      uk: Пакунки на GHCR
+    type: package-registry
+    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-27
   - label:
       en: Packages on Docker Hub
       es: Paquetes en Docker Hub
@@ -120,6 +132,12 @@ links:
       es: Paquetes en Docker Hub
       uk: Пакунки на Docker Hub
     type: package-registry
+    url: https://hub.docker.com/r/damianbuho/b19-java-oracle-27
+  - label:
+      en: Packages on Docker Hub
+      es: Paquetes en Docker Hub
+      uk: Пакунки на Docker Hub
+    type: package-registry
     url: https://hub.docker.com/r/damianbuho/b19-java-temurin-21
   - label:
       en: Packages on Docker Hub
@@ -133,6 +151,12 @@ links:
       uk: Пакунки на Docker Hub
     type: package-registry
     url: https://hub.docker.com/r/damianbuho/b19-java-temurin-26
+  - label:
+      en: Packages on Docker Hub
+      es: Paquetes en Docker Hub
+      uk: Пакунки на Docker Hub
+    type: package-registry
+    url: https://hub.docker.com/r/damianbuho/b19-java-temurin-27
 org:
   b19:
     scaffold:
@@ -154,6 +178,7 @@ org:
             - 21
             - 25
             - 26
+            - 27
     conventions:
       fragments:
         parents:

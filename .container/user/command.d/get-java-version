@@ -5,5 +5,5 @@
 # SPDX-License-Identifier: MIT
 
   set -e
-  # Match every dotted component: Oracle patch releases carry a fourth one (21.0.12.1), Temurin three
-  java --version | grep -oP -m1 '\d+(?:\.\d+)+'
+  # First version line, skipping the JVM's "Picked up JAVA_TOOL_OPTIONS" notice on stderr at runtime: bare majors (27), dotted releases (21.0.12.1); -o prints every match per line, so head takes the version before the date
+  java --version 2>&1 | grep -v '^Picked up' | head -n 1 | grep -oP '\d+(?:\.\d+)*' | head -n 1
