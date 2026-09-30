@@ -20,6 +20,7 @@ includes:
   - .makefile/b19/ci.yaml
   - .makefile/b19/images/ubuntu.yaml
   - .makefile/b19/traits/release.yaml
+  - .makefile/container/traits/image-variant.yaml
   - https://kiota.ch/b19/metadata/raw/branch/main/include.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/forge/github.yaml
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
@@ -66,107 +67,30 @@ links:
       es: Paquetes en GHCR
       uk: Пакунки на GHCR
     type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Foracle-21
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Foracle-25
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Foracle-26
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Foracle-27
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-21
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-25
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-26
-  - label:
-      en: Packages on GHCR
-      es: Paquetes en GHCR
-      uk: Пакунки на GHCR
-    type: package-registry
-    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava%2Ftemurin-27
+    url: https://github.com/damian-buho/b19-java/pkgs/container/b19%2Fjava
   - label:
       en: Packages on Docker Hub
       es: Paquetes en Docker Hub
       uk: Пакунки на Docker Hub
     type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-oracle-21
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-oracle-25
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-oracle-26
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-oracle-27
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-temurin-21
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-temurin-25
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-temurin-26
-  - label:
-      en: Packages on Docker Hub
-      es: Paquetes en Docker Hub
-      uk: Пакунки на Docker Hub
-    type: package-registry
-    url: https://hub.docker.com/r/damianbuho/b19-java-temurin-27
+    url: https://hub.docker.com/r/damianbuho/b19-java
 org:
   b19:
     scaffold:
       root-stage: root
   projectfile:
+    build:
+      args:
+        B19_JAVA_DISTRO: oracle
+        B19_JAVA_SERIES: "25"
     image:
       distro: "{B19_JAVA_DISTRO}"
       series: "{B19_JAVA_SERIES}"
-      path: ${org}/${name}/${distro}-${series}
-      flatpath: ${org}-${name}-${distro}-${series}
+      tag: ${distro}-${series}
+      variant:
+        parts:
+          - distro
+          - series
     ci:
       image: b19/java/{B19_JAVA_DISTRO}-{B19_JAVA_SERIES}
       matrix:

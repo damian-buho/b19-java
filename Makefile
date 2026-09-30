@@ -8,7 +8,6 @@ B19_JAVA_DISTRO  ?= oracle
 B19_JAVA_SERIES  ?= 25
 
 M6E_CONTAINER_NAME = $(subst /,-,${NAMESPACE})-${PROJECT}-$(B19_JAVA_DISTRO)-$(B19_JAVA_SERIES)
-M6E_IMAGE_BASENAME = ${NAMESPACE}/${PROJECT}/$(B19_JAVA_DISTRO)-$(B19_JAVA_SERIES)
 
 # Both matrix axes must reach the build: the cell binds them as make command-line
 # vars, and a bare --build-arg NAME makes buildx read that value from the env. A
