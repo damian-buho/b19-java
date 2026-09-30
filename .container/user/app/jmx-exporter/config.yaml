@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+# Default: JVM metrics, no startup delay. Override via B19_JAVA_JMX_CONFIG.
+startDelaySeconds: 0

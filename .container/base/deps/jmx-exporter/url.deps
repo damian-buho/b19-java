@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+https://github.com/prometheus/jmx_exporter/releases/download/${M6E_UPSTREAM_VERSION}/jmx_prometheus_javaagent-${M6E_UPSTREAM_VERSION}.jar

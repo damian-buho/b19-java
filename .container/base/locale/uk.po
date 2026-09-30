@@ -58,6 +58,34 @@ msgstr "Видалити архів вихідного коду Java"
 msgid "Remove jmods (jlink modules)"
 msgstr "Видалити jmods (модулі jlink)"
 
+#: .container/base/build.d/base/post/210-install-jmx-exporter.sh:11
+msgid "Install JMX exporter %s"
+msgstr "Встановити експортер JMX %s"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:8
+msgid "JMX exporter disabled (B19_JAVA_JMX_ENABLED=false)"
+msgstr "Експортер JMX вимкнено (B19_JAVA_JMX_ENABLED=false)"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:18
+msgid "JMX agent jar missing at %s -- metrics not exposed"
+msgstr "JAR агента JMX відсутній у %s -- метрики не експонуються"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:23
+msgid "JMX config missing at %s -- metrics not exposed"
+msgstr "Конфігурація JMX відсутня у %s -- метрики не експонуються"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:29
+msgid "JMX port not numeric: %s -- metrics not exposed"
+msgstr "Порт JMX не числовий: %s -- метрики не експонуються"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
+msgid "JMX exporter attached on %s:%s"
+msgstr "Експортер JMX приєднано на %s:%s"
+
+#: .container/user/test.d/1300-jmx-exporter-scrape.sh:38
+msgid "JMX exporter scrape test passed on port %s"
+msgstr "Перевірку збирання метрик експортера JMX пройдено на порту %s"
+
 #~ msgid "Rendering vm.options for %s series"
 #~ msgstr "Генерація vm.options для серії %s"
 

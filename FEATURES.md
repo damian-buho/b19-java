@@ -24,6 +24,13 @@ SPDX-License-Identifier: MIT
 - `jmods/` and `src.zip` are stripped from the final image to reduce size.
 - Includes `git` for build tooling and dependency resolution.
 
+### Opt-in Prometheus metrics via JMX
+
+- The Prometheus JMX exporter javaagent ships pinned in the image and attaches to every `java` invocation when `B19_JAVA_JMX_ENABLED=true`, exposing JVM metrics (heap, GC, threads) on a `/metrics` endpoint for Prometheus to scrape.
+- Disabled by default and bound to loopback by default -- no port opens unless you ask, and the bind address, port, and config file are all runtime-overridable with no rebuild.
+- The default config reports JVM metrics with no per-application setup; mount your own exporter config (or point `B19_JAVA_JMX_CONFIG` at it) to add application MBean rules.
+- The hook is inheritable, so downstream images built on `b19/java` get the same behavior automatically.
+
 ### Production-tuned JVM flags
 
 - A `${B19_HOME}/vm.options` @-file is rendered from `vm.options.j2` at every container startup and flattened into `JAVA_TOOL_OPTIONS`, so every `java` invocation receives the flags automatically (the launcher reads `JAVA_TOOL_OPTIONS` before command-line args; an explicit `java -Xmx8g` still wins).
@@ -134,7 +141,7 @@ See [use-healthcheck.d](../how-to/use-healthcheck.d.md) for the check list, slot
 
 - The container runs as a non-root user (`ubuntu`, UID/GID 1000) with all runtime files owned by that user.
 - A two-stage build separates root-level system installation from user-level runtime setup.
-- User identity is configurable at build time.
+- User identity is configurable at build time, and an opt-in root start remaps it to the host user so bind mounts keep their ownership.
 
 ### Air-gapped / offline build and runtime support
 

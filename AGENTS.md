@@ -33,10 +33,15 @@ JDK runtime image with 2D axis: distribution x series. Base for scala, and used 
 - ZGC generational mode, string deduplication, compressed oops by default
 - `jmods/` stripped from final image (size reduction)
 - Runtime CA import: `entrypoint.d/1100-add-certs-to-java.i.sh` — seeds `${B19_HOME}/lib/security/cacerts` from the system truststore, imports each `${B19_HOME}/ca-certs/*.pem` via `keytool`, and points Java at the copy (no rebuild required)
+- Opt-in Prometheus metrics: `entrypoint.d/1160-enable-jmx-exporter.i.sh` — attaches the Prometheus JMX exporter javaagent (pinned jar under `${B19_HOME}/jmx-exporter/`, default JVM-only config) via `JAVA_TOOL_OPTIONS` when `B19_JAVA_JMX_ENABLED=true`, so every `java` invocation (including Tanuki-wrapped downstream JVMs) exposes `/metrics`. Disabled by default, loopback bind by default
 
 ## ENV
 
 - `B19_JAVA_DISTRO=oracle`
+- `B19_JAVA_JMX_CONFIG=${B19_HOME}/jmx-exporter/config.yaml`
+- `B19_JAVA_JMX_ENABLED=false`
+- `B19_JAVA_JMX_HOST=127.0.0.1`
+- `B19_JAVA_JMX_PORT=9404`
 - `B19_JAVA_XMS=512m`
 - `B19_JAVA_XMX=2048m`
 

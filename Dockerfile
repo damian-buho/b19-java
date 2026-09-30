@@ -26,6 +26,10 @@ ARG M6E_VERSION
 ARG TARGETARCH
 
 ENV B19_JAVA_DISTRO="${B19_JAVA_DISTRO}"      \
+    B19_JAVA_JMX_CONFIG="${B19_HOME}/jmx-exporter/config.yaml" \
+    B19_JAVA_JMX_ENABLED=false                  \
+    B19_JAVA_JMX_HOST=127.0.0.1                 \
+    B19_JAVA_JMX_PORT=9404                      \
     B19_JAVA_SERIES="${B19_JAVA_SERIES}"      \
     B19_JAVA_XMS=512m                         \
     B19_JAVA_XMX=2048m

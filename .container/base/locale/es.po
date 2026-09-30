@@ -57,6 +57,34 @@ msgstr "Eliminar archivo fuente de Java"
 msgid "Remove jmods (jlink modules)"
 msgstr "Eliminar jmods (módulos jlink)"
 
+#: .container/base/build.d/base/post/210-install-jmx-exporter.sh:11
+msgid "Install JMX exporter %s"
+msgstr "Instalar exportador JMX %s"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:8
+msgid "JMX exporter disabled (B19_JAVA_JMX_ENABLED=false)"
+msgstr "Exportador JMX deshabilitado (B19_JAVA_JMX_ENABLED=false)"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:18
+msgid "JMX agent jar missing at %s -- metrics not exposed"
+msgstr "JAR del agente JMX ausente en %s -- métricas no expuestas"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:23
+msgid "JMX config missing at %s -- metrics not exposed"
+msgstr "Configuración JMX ausente en %s -- métricas no expuestas"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:29
+msgid "JMX port not numeric: %s -- metrics not exposed"
+msgstr "Puerto JMX no numérico: %s -- métricas no expuestas"
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
+msgid "JMX exporter attached on %s:%s"
+msgstr "Exportador JMX activo en %s:%s"
+
+#: .container/user/test.d/1300-jmx-exporter-scrape.sh:38
+msgid "JMX exporter scrape test passed on port %s"
+msgstr "Prueba de recolección del exportador JMX superada en el puerto %s"
+
 #~ msgid "Rendering vm.options for %s series"
 #~ msgstr "Generando vm.options para la serie %s"
 

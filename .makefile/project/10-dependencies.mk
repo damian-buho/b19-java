@@ -148,3 +148,12 @@ $(FETCH_PATH)/.temurin.27.arm64.stamp: .container/base/deps/java/temurin/arm64.u
 
 PREREQUISITES += .container/base/deps/java/temurin/27/arm64.hash.deps
 
+$(FETCH_PATH)/.jmx-exporter.1.6.0.stamp: .container/base/deps/jmx-exporter/url.deps .container/base/deps/jmx-exporter/version.deps
+	M6E_DEPS_STAGE=base .makefile/container/scripts/fetch.sh jmx-exporter
+	touch $@
+
+.container/base/deps/jmx-exporter/hash.deps: $(FETCH_PATH)/.jmx-exporter.1.6.0.stamp
+	M6E_DEPS_STAGE=base .makefile/container/scripts/update-hash.sh jmx-exporter
+
+PREREQUISITES += .container/base/deps/jmx-exporter/hash.deps
+

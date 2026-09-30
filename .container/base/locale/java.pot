@@ -58,3 +58,31 @@ msgstr ""
 #: .container/user/test.d/1200-javac-compile-test.sh:26
 msgid "javac-%s compile test passed"
 msgstr ""
+
+#: .container/base/build.d/base/post/210-install-jmx-exporter.sh:11
+msgid "Install JMX exporter %s"
+msgstr ""
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:8
+msgid "JMX exporter disabled (B19_JAVA_JMX_ENABLED=false)"
+msgstr ""
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:18
+msgid "JMX agent jar missing at %s -- metrics not exposed"
+msgstr ""
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:23
+msgid "JMX config missing at %s -- metrics not exposed"
+msgstr ""
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:29
+msgid "JMX port not numeric: %s -- metrics not exposed"
+msgstr ""
+
+#: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
+msgid "JMX exporter attached on %s:%s"
+msgstr ""
+
+#: .container/user/test.d/1300-jmx-exporter-scrape.sh:38
+msgid "JMX exporter scrape test passed on port %s"
+msgstr ""
