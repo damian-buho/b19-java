@@ -31,22 +31,22 @@ También hereda las características de B19 / Ubuntu; consulta [Características
 
 ## Qué entrega este proyecto
 
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/oracle-27:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
-- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java/temurin-27:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-oracle-21:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-oracle-25:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-oracle-26:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-oracle-27:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-temurin-21:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-temurin-25:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-temurin-26:latest`
-- **Imagen de contenedor** `damianbuho/b19-java-temurin-27:latest`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:oracle-21`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:oracle-25`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:oracle-26`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:oracle-27`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:temurin-21`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:temurin-25`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:temurin-26`
+- **Imagen de contenedor** `ghcr.io/damian-buho/b19/java:temurin-27`
+- **Imagen de contenedor** `damianbuho/b19-java:oracle-21`
+- **Imagen de contenedor** `damianbuho/b19-java:oracle-25`
+- **Imagen de contenedor** `damianbuho/b19-java:oracle-26`
+- **Imagen de contenedor** `damianbuho/b19-java:oracle-27`
+- **Imagen de contenedor** `damianbuho/b19-java:temurin-21`
+- **Imagen de contenedor** `damianbuho/b19-java:temurin-25`
+- **Imagen de contenedor** `damianbuho/b19-java:temurin-26`
+- **Imagen de contenedor** `damianbuho/b19-java:temurin-27`
 
 ## Instalación
 
@@ -55,13 +55,13 @@ Descarga la imagen de contenedor publicada:
 ### Descargar de GHCR — linux/amd64
 
 ```sh
-docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
+docker pull ghcr.io/damian-buho/b19/java:oracle-21
 ```
 
 ### Descargar de DockerHub — linux/amd64
 
 ```sh
-docker pull damianbuho/b19-java-oracle-21:latest
+docker pull damianbuho/b19-java:oracle-21
 ```
 
 Distribución: `oracle` | `temurin`
@@ -75,7 +75,7 @@ Si los registros anteriores no están disponibles, descarga desde el origen:
 ### Descargar de Kiota — linux/amd64
 
 ```sh
-docker pull kiota.ch/b19/java/oracle-21:latest
+docker pull kiota.ch/b19/java:oracle-21
 ```
 
 Distribución: `oracle` | `temurin`
@@ -89,13 +89,13 @@ Construye sobre esta imagen:
 ### Desde GHCR
 
 ```dockerfile
-FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
+FROM ghcr.io/damian-buho/b19/java:oracle-21
 ```
 
 ### Desde DockerHub
 
 ```dockerfile
-FROM damianbuho/b19-java-oracle-21:latest
+FROM damianbuho/b19-java:oracle-21
 ```
 
 Distribución: `oracle` | `temurin`

@@ -31,22 +31,22 @@ pf-cli-managed: yes
 
 ## Що надає цей проєкт
 
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-21:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-25:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-26:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/oracle-27:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-21:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-25:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-26:latest`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java/temurin-27:latest`
-- **Образ контейнера** `damianbuho/b19-java-oracle-21:latest`
-- **Образ контейнера** `damianbuho/b19-java-oracle-25:latest`
-- **Образ контейнера** `damianbuho/b19-java-oracle-26:latest`
-- **Образ контейнера** `damianbuho/b19-java-oracle-27:latest`
-- **Образ контейнера** `damianbuho/b19-java-temurin-21:latest`
-- **Образ контейнера** `damianbuho/b19-java-temurin-25:latest`
-- **Образ контейнера** `damianbuho/b19-java-temurin-26:latest`
-- **Образ контейнера** `damianbuho/b19-java-temurin-27:latest`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-21`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-25`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-26`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-27`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-21`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-25`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-26`
+- **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-27`
+- **Образ контейнера** `damianbuho/b19-java:oracle-21`
+- **Образ контейнера** `damianbuho/b19-java:oracle-25`
+- **Образ контейнера** `damianbuho/b19-java:oracle-26`
+- **Образ контейнера** `damianbuho/b19-java:oracle-27`
+- **Образ контейнера** `damianbuho/b19-java:temurin-21`
+- **Образ контейнера** `damianbuho/b19-java:temurin-25`
+- **Образ контейнера** `damianbuho/b19-java:temurin-26`
+- **Образ контейнера** `damianbuho/b19-java:temurin-27`
 
 ## Встановлення
 
@@ -55,13 +55,13 @@ pf-cli-managed: yes
 ### Завантажити з GHCR — linux/amd64
 
 ```sh
-docker pull ghcr.io/damian-buho/b19/java/oracle-21:latest
+docker pull ghcr.io/damian-buho/b19/java:oracle-21
 ```
 
 ### Завантажити з DockerHub — linux/amd64
 
 ```sh
-docker pull damianbuho/b19-java-oracle-21:latest
+docker pull damianbuho/b19-java:oracle-21
 ```
 
 Дистрибутив: `oracle` | `temurin`
@@ -75,7 +75,7 @@ docker pull damianbuho/b19-java-oracle-21:latest
 ### Завантажити з Kiota — linux/amd64
 
 ```sh
-docker pull kiota.ch/b19/java/oracle-21:latest
+docker pull kiota.ch/b19/java:oracle-21
 ```
 
 Дистрибутив: `oracle` | `temurin`
@@ -89,13 +89,13 @@ docker pull kiota.ch/b19/java/oracle-21:latest
 ### З GHCR
 
 ```dockerfile
-FROM ghcr.io/damian-buho/b19/java/oracle-21:latest
+FROM ghcr.io/damian-buho/b19/java:oracle-21
 ```
 
 ### З DockerHub
 
 ```dockerfile
-FROM damianbuho/b19-java-oracle-21:latest
+FROM damianbuho/b19-java:oracle-21
 ```
 
 Дистрибутив: `oracle` | `temurin`
