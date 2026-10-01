@@ -45,7 +45,7 @@ EOF
   kill "${JMX_PID}" 2>/dev/null || true
   wait "${JMX_PID}" 2>/dev/null || true
 
-  echo "${METRICS}" | grep -q "^jvm_" || { echo "FATAL: no jvm_ metrics on :${JMX_TEST_PORT}/metrics" >&2; exit 1; }
+  grep -q "^jvm_" <<<"${METRICS}" || { echo "FATAL: no jvm_ metrics on :${JMX_TEST_PORT}/metrics" >&2; exit 1; }
   b19-log good "JMX" "$(_p "JMX exporter scrape test passed on port %s" "${JMX_TEST_PORT}")"
 
   rm -rf "${TESTDIR}"
