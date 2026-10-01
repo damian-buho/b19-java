@@ -92,7 +92,6 @@ org:
           - distro
           - series
     ci:
-      image: b19/java/{B19_JAVA_DISTRO}-{B19_JAVA_SERIES}
       matrix:
         axes:
           B19_JAVA_DISTRO:

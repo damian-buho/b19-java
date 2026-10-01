@@ -80,7 +80,7 @@ jobs:
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}
-      M6E_IMAGE_FULLNAME: b19/java/${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:${{ vars.BASE_IMAGE_DEFAULT_VERSION || 'latest' }}-${{ github.run_id }}
+      M6E_IMAGE_FULLNAME: b19/java:${{ vars.BASE_IMAGE_DEFAULT_VERSION || 'latest' }}-${{ github.run_id }}-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}
       M6E_COMPOSE_PROJECT_NAME: ci-b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ github.run_id }}-${{ github.run_attempt }}
       M6E_CONTAINER_INSTANCE: ci-b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
@@ -131,7 +131,7 @@ jobs:
       - if: ${{ always() }}
         uses: projectfile-org/actions/docker-cleanup@c3575dd4a3b40e5de7a2f7a91bb5f58d04e17945 # v1
         with:
-          image: b19/java/${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:${{ env.M6E_TAG }}-${{ github.run_id }}
+          image: b19/java:${{ env.M6E_TAG }}-${{ github.run_id }}-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}
           network: ci-b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ env.M6E_RUN_SCOPE }}-network
   container-ready-to-test:
     runs-on: ubuntu-26.04
@@ -216,7 +216,7 @@ jobs:
         uses: projectfile-org/actions/container-build/buildx@c3575dd4a3b40e5de7a2f7a91bb5f58d04e17945 # v1
         with:
           artifact-name: image-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ github.run_id }}
-          image: b19/java/${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:${{ env.M6E_TAG }}-${{ github.run_id }}
+          image: b19/java:${{ env.M6E_TAG }}-${{ github.run_id }}-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}
           build-args: |-
             B19_COLOR=${{ inputs.B19_COLOR || vars.B19_COLOR || '1' }}
             B19_FETCH_DOCKER_CACHE=${{ inputs.B19_FETCH_DOCKER_CACHE || vars.B19_FETCH_DOCKER_CACHE || 'Y' }}
@@ -426,7 +426,7 @@ jobs:
         uses: projectfile-org/actions/oci-push@c3575dd4a3b40e5de7a2f7a91bb5f58d04e17945 # v1
         with:
           artifact-name: image-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ github.run_id }}
-          image: b19/java/${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}:${{ env.M6E_TAG }}-${{ github.run_id }}
+          image: b19/java:${{ env.M6E_TAG }}-${{ github.run_id }}-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}
           version: ${{ github.ref_name }}
           # The branch this run is on, empty on a tag. Non-empty collapses the cascade to
           # one `latest-<branch>` tag on the primary sink, so a branch build is testable
