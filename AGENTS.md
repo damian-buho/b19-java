@@ -14,7 +14,7 @@ JDK runtime image with 2D axis: distribution x series. Base for scala, and used 
 
 - Base: `b19/ubuntu/${B19_UBUNTU_SERIES}` (resolute) — single stage
 - 2D axis: `B19_JAVA_DISTRO` (oracle, temurin) x `B19_JAVA_SERIES` (21, 25, 26, 27)
-- Image name: `b19/java/{distro}-{series}` (e.g. `b19/java/oracle-25`, `b19/java/temurin-21`)
+- Image name: `b19/java/{distro}-{series}` (e.g. `b19/java:oracle-25`, `b19/java:temurin-21`)
 - Arch: amd64, arm64
 - BOTH axes need their own `--build-arg` line in the Makefile. An axis that is not forwarded falls back to the Dockerfile `ARG` default, so the cell builds the wrong JDK under the right tag — the image lies, and only `test.d` catches it
 - Temurin splits `version.deps` (SemVer) from `build.deps` (build number): the upstream URL spells that number `%2B<build>` in the release tag and `_<build>` in the filename, so one variable cannot render both. Oracle carries no build number. MUST NOT re-pin a per-series `url.deps` — it shadows the distro template (`b19-resolve-dep` takes the most specific file) and then a version bump changes the filename without changing what is downloaded
