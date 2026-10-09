@@ -25,6 +25,10 @@ ARG M6E_PROJECT
 ARG TARGETARCH
 
 ENV B19_JAVA_DISTRO="${B19_JAVA_DISTRO}"      \
+    B19_JAVA_EXPORT_ENABLED=true                \
+    B19_JAVA_EXPORT_JMX=false                   \
+    B19_JAVA_EXPORT_MODULES="java.logging,jdk.charsets,jdk.crypto.ec,jdk.localedata,jdk.management,jdk.net,jdk.unsupported,jdk.zipfs" \
+    B19_JAVA_EXPORT_PATH="${B19_HOME}"          \
     B19_JAVA_JMX_CONFIG="${B19_HOME}/jmx-exporter/config.yaml" \
     B19_JAVA_JMX_ENABLED=false                  \
     B19_JAVA_JMX_HOST=127.0.0.1                 \

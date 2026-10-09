@@ -39,6 +39,14 @@ SPDX-License-Identifier: MIT
 - Heap floor/ceiling are parameterized by `B19_JAVA_XMS` (default `512m`) and `B19_JAVA_XMX` (default `2048m`), interpolated into the template at render time -- no rebuild needed.
 - Set `JAVA_TOOL_OPTIONS` explicitly to override the auto-applied flags entirely.
 
+### Slim Java runtime for application images
+
+- An application image ships only the Java modules it uses instead of a full JDK: no compiler, headers or developer tools, so it is several hundred megabytes smaller and exposes less.
+- The module set is derived from the application’s own jars, plus a default set for character sets, locales and management; each image can replace or extend it.
+- The slim runtime keeps what this image adds at startup: production JVM flags, custom CA import and the version test. The Prometheus JMX exporter is included on request.
+- Startup stays fast: the runtime carries its own class-data sharing archive.
+- Works for every distribution and series this image publishes. See [the how-to](../how-to/use-export.md).
+
 ## Inherited from B19 / Ubuntu
 
 ### Persistent APT cache across builds

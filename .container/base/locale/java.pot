@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: MIT
 msgid ""
 msgstr ""
-"Project-Id-Version: java 1.1.7\n"
-"Report-Msgid-Bugs-To: https://codeberg.org/b19/java/issues\n"
-"POT-Creation-Date: 2026-09-07 03:45+0000\n"
+"Project-Id-Version: java development\n"
+"Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
+"POT-Creation-Date: 2026-10-09 17:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,55 @@ msgid "Remove Java source archive"
 msgstr ""
 
 #: .container/base/build.d/base/post/200-install-java.sh:21
-msgid "Remove jmods (jlink modules)"
+msgid "Remove compact-header CDS archives from %s"
+msgstr ""
+
+#: .container/base/build.d/base/post/210-install-jmx-exporter.sh:12
+msgid "Install JMX exporter %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:8
+msgid "Java runtime export disabled (B19_JAVA_EXPORT_ENABLED=%s)"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:23
+msgid "Scanning %s jars under %s for modules"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:27
+msgid "jdeps found modules: %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:30
+msgid "jdeps failed, falling back to %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:42
+msgid "Module %s not in Java %s, skipped"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:46
+msgid "Link Java runtime with %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:54
+msgid "Create %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:55
+msgid "Export Java runtime to %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:71
+msgid "Export %s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:80
+msgid "Default %s=%s"
+msgstr ""
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:83
+msgid "Exported Java runtime: %s"
 msgstr ""
 
 #: .container/user/entrypoint.d/1100-add-certs-to-java.i.sh:21
@@ -55,14 +103,6 @@ msgstr ""
 msgid "vm.options missing at %s -- JVM flags not applied"
 msgstr ""
 
-#: .container/user/test.d/1200-javac-compile-test.sh:26
-msgid "javac-%s compile test passed"
-msgstr ""
-
-#: .container/base/build.d/base/post/210-install-jmx-exporter.sh:11
-msgid "Install JMX exporter %s"
-msgstr ""
-
 #: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:8
 msgid "JMX exporter disabled (B19_JAVA_JMX_ENABLED=false)"
 msgstr ""
@@ -83,6 +123,10 @@ msgstr ""
 msgid "JMX exporter attached on %s:%s"
 msgstr ""
 
-#: .container/user/test.d/1300-jmx-exporter-scrape.sh:38
+#: .container/user/test.d/1200-javac-compile-test.sh:26
+msgid "javac-%s compile test passed"
+msgstr ""
+
+#: .container/user/test.d/1300-jmx-exporter-scrape.sh:49
 msgid "JMX exporter scrape test passed on port %s"
 msgstr ""

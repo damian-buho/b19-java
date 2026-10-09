@@ -24,6 +24,7 @@ Community-maintained distribution of Java built on B19/Ubuntu. This repository h
 - JDK from upstream tarball with distribution choice
 - Opt-in Prometheus metrics via JMX
 - Production-tuned JVM flags
+- Slim Java runtime for application images
 
 It also inherits the features of B19 / Ubuntu — see [Features](docs/FEATURES.md) for the full list.
 
@@ -128,6 +129,10 @@ Pipeline entry points:
 - `make audited` — Re-scan the pinned dependencies and published artifacts for new vulnerabilities
 - `make check-outdated` — Report every pinned dependency that lags upstream
 - `make ready-to-publish` — Run the pseudo-CI pipeline locally — build, test and scan, without publishing
+
+## Documentation
+
+- [Ship a slim Java runtime](docs/how-to/use-export.md)
 
 ## Policies
 

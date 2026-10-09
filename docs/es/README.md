@@ -26,6 +26,7 @@ Distribución de Java mantenida por la comunidad, construida sobre B19/Ubuntu. E
 - JDK desde el tarball upstream con elección de distribución
 - Métricas Prometheus opcionales vía JMX
 - Flags de JVM ajustados a producción
+- Entorno de ejecución Java reducido para imágenes de aplicación
 
 También hereda las características de B19 / Ubuntu; consulta [Características](FEATURES.md) para ver la lista completa.
 
@@ -130,6 +131,10 @@ Puntos de entrada de la canalización:
 - `make audited` — Vuelve a escanear las dependencias fijadas y los artefactos publicados en busca de vulnerabilidades nuevas
 - `make check-outdated` — Informa de cada dependencia fijada que va por detrás de su versión upstream
 - `make ready-to-publish` — Ejecuta localmente el pipeline pseudo-CI — compila, prueba y escanea, sin publicar
+
+## Documentación
+
+- [Ship a slim Java runtime](../how-to/use-export.md)
 
 ## Políticas
 
