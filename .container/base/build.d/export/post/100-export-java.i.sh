@@ -23,11 +23,18 @@
   b19-log info "JAVA" "$(_p "Scanning %s jars under %s for modules" "${#JAVA_EXPORT_JAR_LIST[@]}" "${B19_JAVA_EXPORT_PATH}")"
 
   if [ "${#JAVA_EXPORT_JAR_LIST[@]}" -gt 0 ]; then
-    if JAVA_EXPORT_FOUND="$(jdeps --ignore-missing-deps --multi-release "${B19_JAVA_SERIES}" --print-module-deps "${JAVA_EXPORT_JAR_LIST[@]}")"; then
+    # Unpack every jar into one class tree without module descriptors
+    JAVA_EXPORT_CLASSES="${B19_TEMP_PATH}/java-export-classes"
+    mkdir --parents "${JAVA_EXPORT_CLASSES}"
+    for JAVA_EXPORT_JAR in "${JAVA_EXPORT_JAR_LIST[@]}"; do
+      b19-run "JAVA" "$(_p "Unpack %s" "${JAVA_EXPORT_JAR}")" -- env --chdir="${JAVA_EXPORT_CLASSES}" jar --extract --file "${JAVA_EXPORT_JAR}"
+    done
+    fd --hidden --no-ignore --max-depth 1 --glob '{module-info.class,META-INF}' . "${JAVA_EXPORT_CLASSES}" --exec-batch rm --recursive --force
+    if JAVA_EXPORT_FOUND="$(jdeps --ignore-missing-deps --print-module-deps "${JAVA_EXPORT_CLASSES}")"; then
       b19-log info "JAVA" "$(_p "jdeps found modules: %s" "${JAVA_EXPORT_FOUND}")"
     else
+      b19-log warn "JAVA" "$(_p "jdeps failed (%s), falling back to %s" "${JAVA_EXPORT_FOUND}" "java.se")"
       JAVA_EXPORT_FOUND="java.se"
-      b19-log warn "JAVA" "$(_p "jdeps failed, falling back to %s" "${JAVA_EXPORT_FOUND}")"
     fi
     JAVA_EXPORT_WANTED="${JAVA_EXPORT_WANTED},${JAVA_EXPORT_FOUND}"
   fi

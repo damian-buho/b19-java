@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: b19-java\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 17:57+0000\n"
+"POT-Creation-Date: 2026-10-09 18:05+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
 "Last-Translator: b19 team\n"
 "Language-Team: Ukrainian\n"
@@ -42,39 +42,43 @@ msgstr ""
 msgid "Scanning %s jars under %s for modules"
 msgstr "Пошук модулів у %s JAR-файлах у %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:27
+#: .container/base/build.d/export/post/100-export-java.i.sh:30
+msgid "Unpack %s"
+msgstr "Розпакувати %s"
+
+#: .container/base/build.d/export/post/100-export-java.i.sh:34
 msgid "jdeps found modules: %s"
 msgstr "jdeps знайшов модулі: %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:30
-msgid "jdeps failed, falling back to %s"
-msgstr "jdeps завершився з помилкою, використовується %s"
+#: .container/base/build.d/export/post/100-export-java.i.sh:36
+msgid "jdeps failed (%s), falling back to %s"
+msgstr "jdeps завершився з помилкою (%s), використовується %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:42
+#: .container/base/build.d/export/post/100-export-java.i.sh:49
 msgid "Module %s not in Java %s, skipped"
 msgstr "Модуля %s немає в Java %s, пропущено"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:46
+#: .container/base/build.d/export/post/100-export-java.i.sh:53
 msgid "Link Java runtime with %s"
 msgstr "Скомпонувати середовище виконання Java з %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:54
+#: .container/base/build.d/export/post/100-export-java.i.sh:61
 msgid "Create %s"
 msgstr "Створити %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:55
+#: .container/base/build.d/export/post/100-export-java.i.sh:62
 msgid "Export Java runtime to %s"
 msgstr "Експортувати середовище виконання Java до %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:71
+#: .container/base/build.d/export/post/100-export-java.i.sh:78
 msgid "Export %s"
 msgstr "Експортувати %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:80
+#: .container/base/build.d/export/post/100-export-java.i.sh:87
 msgid "Default %s=%s"
 msgstr "Типове значення %s=%s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:83
+#: .container/base/build.d/export/post/100-export-java.i.sh:90
 msgid "Exported Java runtime: %s"
 msgstr "Експортоване середовище виконання Java: %s"
 
