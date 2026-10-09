@@ -18,4 +18,4 @@
         --use-compress-program pigz
 
   b19-run "JAVA" "$(_ "Remove Java source archive")" --  rm -f "${B19_PREFIX}/lib/src.zip"
-  b19-run "JAVA" "$(_ "Remove jmods (jlink modules)")" --  rm -rf "${B19_PREFIX}/jmods"
+  b19-run "JAVA" "$(_p "Remove compact-header CDS archives from %s" "${B19_PREFIX}/lib/server")" --  rm -f "${B19_PREFIX}/lib/server/classes_coh.jsa" "${B19_PREFIX}/lib/server/classes_nocoops_coh.jsa"
