@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: java development\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 17:49+0000\n"
+"POT-Creation-Date: 2026-10-09 17:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,4 +129,8 @@ msgstr ""
 
 #: .container/user/test.d/1300-jmx-exporter-scrape.sh:49
 msgid "JMX exporter scrape test passed on port %s"
+msgstr ""
+
+#: .container/user/test.d/1400-jlink-runtime.sh:15
+msgid "jlink runtime for Java %s starts"
 msgstr ""

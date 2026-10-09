@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: b19-java\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 17:49+0000\n"
+"POT-Creation-Date: 2026-10-09 17:57+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
 "Last-Translator: b19 team\n"
 "Language-Team: Ukrainian\n"
@@ -35,7 +35,8 @@ msgstr "Встановити експортер JMX %s"
 
 #: .container/base/build.d/export/post/100-export-java.i.sh:8
 msgid "Java runtime export disabled (B19_JAVA_EXPORT_ENABLED=%s)"
-msgstr "Експорт середовища виконання Java вимкнено (B19_JAVA_EXPORT_ENABLED=%s)"
+msgstr ""
+"Експорт середовища виконання Java вимкнено (B19_JAVA_EXPORT_ENABLED=%s)"
 
 #: .container/base/build.d/export/post/100-export-java.i.sh:23
 msgid "Scanning %s jars under %s for modules"
@@ -133,6 +134,10 @@ msgstr "Тест компіляції javac-%s пройдено"
 #: .container/user/test.d/1300-jmx-exporter-scrape.sh:49
 msgid "JMX exporter scrape test passed on port %s"
 msgstr "Перевірку збирання метрик експортера JMX пройдено на порту %s"
+
+#: .container/user/test.d/1400-jlink-runtime.sh:15
+msgid "jlink runtime for Java %s starts"
+msgstr "Середовище jlink для Java %s запускається"
 
 #~ msgid "Remove jmods (jlink modules)"
 #~ msgstr "Видалити jmods (модулі jlink)"
