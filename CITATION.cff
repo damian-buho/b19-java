@@ -32,5 +32,5 @@ keywords:
   - language
   - runtime
   - docker
-version: 0.6.0
-date-released: "2026-10-09"
+version: 0.6.1
+date-released: "2026-10-10"
