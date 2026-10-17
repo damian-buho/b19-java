@@ -29,8 +29,8 @@ keywords:
   - java
   - jdk
   - jvm
-  - language
-  - runtime
-  - docker
+  - openjdk
+  - temurin
+  - jmx
 version: 0.6.2
 date-released: "2026-10-10"
