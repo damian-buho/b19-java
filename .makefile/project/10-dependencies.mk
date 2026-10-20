@@ -22,20 +22,20 @@ $(FETCH_PATH)/.oracle.21.0.12.1.arm64.stamp: .container/base/deps/java/oracle/ar
 
 PREREQUISITES += .container/base/deps/java/oracle/21/arm64.hash.deps
 
-$(FETCH_PATH)/.oracle.25.0.4.1.amd64.stamp: .container/base/deps/java/oracle/amd64.url.deps .container/base/deps/java/oracle/25/version.deps
+$(FETCH_PATH)/.oracle.25.0.5.amd64.stamp: .container/base/deps/java/oracle/amd64.url.deps .container/base/deps/java/oracle/25/version.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/oracle
 	touch $@
 
-.container/base/deps/java/oracle/25/amd64.hash.deps: $(FETCH_PATH)/.oracle.25.0.4.1.amd64.stamp
+.container/base/deps/java/oracle/25/amd64.hash.deps: $(FETCH_PATH)/.oracle.25.0.5.amd64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=amd64 .makefile/container/scripts/update-hash.sh java/oracle
 
 PREREQUISITES += .container/base/deps/java/oracle/25/amd64.hash.deps
 
-$(FETCH_PATH)/.oracle.25.0.4.1.arm64.stamp: .container/base/deps/java/oracle/arm64.url.deps .container/base/deps/java/oracle/25/version.deps
+$(FETCH_PATH)/.oracle.25.0.5.arm64.stamp: .container/base/deps/java/oracle/arm64.url.deps .container/base/deps/java/oracle/25/version.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=arm64 .makefile/container/scripts/fetch.sh java/oracle
 	touch $@
 
-.container/base/deps/java/oracle/25/arm64.hash.deps: $(FETCH_PATH)/.oracle.25.0.4.1.arm64.stamp
+.container/base/deps/java/oracle/25/arm64.hash.deps: $(FETCH_PATH)/.oracle.25.0.5.arm64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/oracle
 
 PREREQUISITES += .container/base/deps/java/oracle/25/arm64.hash.deps
