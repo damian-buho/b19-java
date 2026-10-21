@@ -84,7 +84,7 @@ org:
     build:
       args:
         B19_JAVA_DISTRO: oracle
-        B19_JAVA_SERIES: "25"
+        B19_JAVA_SERIES: "27"
     image:
       distro: "{B19_JAVA_DISTRO}"
       series: "{B19_JAVA_SERIES}"

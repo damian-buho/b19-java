@@ -28,7 +28,7 @@ name: published
         default: "oracle"
       B19_JAVA_SERIES:
         type: string
-        default: "25"
+        default: "27"
       B19_OFFGRID_MODE:
         type: string
         default: "N"
@@ -270,7 +270,7 @@ jobs:
           # This cell’s variant parts in declared order, each `<value> <default>`
           variant: |
             ${{ matrix.B19_JAVA_DISTRO }} oracle
-            ${{ matrix.B19_JAVA_SERIES }} 25
+            ${{ matrix.B19_JAVA_SERIES }} 27
           # Every cell of this publish, so two cells deriving one tag are refused before any push
           variant-cells: |
             oracle 25
