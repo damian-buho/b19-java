@@ -13,7 +13,7 @@ An application that only runs Java does not need the full JDK at runtime. This i
 Use two stages. The builder is `FROM` this image, installs the application and runs the `export` build stage as root. The final stage is `FROM` B19/Ubuntu and copies `/export` over its root.
 
 ```dockerfile
-ARG B19_JAVA_BUILD_IMAGE=registry.invalid/b19/java:temurin-26
+ARG B19_JAVA_BUILD_IMAGE=registry.invalid/b19/java:temurin-27
 ARG B19_UBUNTU_BASE_IMAGE=registry.invalid/b19/ubuntu:resolute
 
 FROM ${B19_JAVA_BUILD_IMAGE} AS app-builder
