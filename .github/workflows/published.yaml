@@ -71,7 +71,7 @@ jobs:
     strategy:
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
-        B19_JAVA_SERIES: ["21", "25", "26", "27"]
+        B19_JAVA_SERIES: ["25", "26", "27"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}
@@ -167,7 +167,7 @@ jobs:
       max-parallel: 2
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
-        B19_JAVA_SERIES: ["21", "25", "26", "27"]
+        B19_JAVA_SERIES: ["25", "26", "27"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}
@@ -242,7 +242,7 @@ jobs:
     strategy:
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
-        B19_JAVA_SERIES: ["21", "25", "26", "27"]
+        B19_JAVA_SERIES: ["25", "26", "27"]
         M6E_PUBLISH_SINK: ["ghcr"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
@@ -289,11 +289,9 @@ jobs:
             ${{ matrix.B19_JAVA_SERIES }} 25
           # Every cell of this publish, so two cells deriving one tag are refused before any push
           variant-cells: |
-            oracle 21
             oracle 25
             oracle 26
             oracle 27
-            temurin 21
             temurin 25
             temurin 26
             temurin 27
@@ -322,7 +320,7 @@ jobs:
     strategy:
       matrix:
         B19_JAVA_DISTRO: ["oracle", "temurin"]
-        B19_JAVA_SERIES: ["21", "25", "26", "27"]
+        B19_JAVA_SERIES: ["25", "26", "27"]
     env:
       B19_JAVA_DISTRO: ${{ matrix.B19_JAVA_DISTRO }}
       B19_JAVA_SERIES: ${{ matrix.B19_JAVA_SERIES }}

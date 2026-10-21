@@ -12,9 +12,9 @@ identity:
     uk: Дистрибуція Java з підтримкою спільноти на основі B19/Ubuntu
   title: B19 / Java
   description:
-    en: Oracle and Temurin JDKs in series 21, 25, 26 and 27, with ZGC enabled, slim jlink runtimes for downstream images, and optional JMX metrics.
-    es: JDK de Oracle y Temurin en series 21, 25, 26 y 27, con ZGC activado, runtimes jlink ligeros para imágenes derivadas y métricas JMX opcionales.
-    uk: JDK від Oracle та Temurin у серіях 21, 25, 26 і 27, з увімкненим ZGC, легкими jlink-середовищами для похідних образів і опційними JMX-метриками.
+    en: Oracle and Temurin JDKs in series 25, 26 and 27, with ZGC enabled, slim jlink runtimes for downstream images, and optional JMX metrics.
+    es: JDK de Oracle y Temurin en series 25, 26 y 27, con ZGC activado, runtimes jlink ligeros para imágenes derivadas y métricas JMX opcionales.
+    uk: JDK від Oracle та Temurin у серіях 25, 26 і 27, з увімкненим ZGC, легкими jlink-середовищами для похідних образів і опційними JMX-метриками.
   version: 0.6.5
   released: "2026-10-19"
   visibility: public
@@ -100,7 +100,6 @@ org:
             - oracle
             - temurin
           B19_JAVA_SERIES:
-            - 21
             - 25
             - 26
             - 27

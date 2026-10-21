@@ -10,7 +10,7 @@ pf-cli-managed: yes
 
 # B19 / Java
 
-JDK від Oracle та Temurin у серіях 21, 25, 26 і 27, з увімкненим ZGC, легкими jlink-середовищами для похідних образів і опційними JMX-метриками.
+JDK від Oracle та Temurin у серіях 25, 26 і 27, з увімкненим ZGC, легкими jlink-середовищами для похідних образів і опційними JMX-метриками.
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![Projectfile inside](https://badges.kiota.ch/static/v1?label=projectfile&message=inside&labelColor=0d0d0d&color=8c6723&style=flat-square)](https://projectfile.org) [![License](https://badges.kiota.ch/static/v1?label=license&message=MIT&color=1e5913&style=flat-square)](LICENSE) [![PRs welcome](https://badges.kiota.ch/static/v1?label=PRs&message=welcome&color=1e5913&style=flat-square)](CONTRIBUTING.md) [![REUSE compliance](https://api.reuse.software/badge/github.com/damian-buho/b19-java)](https://api.reuse.software/info/github.com/damian-buho/b19-java)
 
@@ -32,19 +32,15 @@ JDK від Oracle та Temurin у серіях 21, 25, 26 і 27, з увімкн
 
 ## Що надає цей проєкт
 
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-21`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-25`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-26`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:oracle-27`
-- **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-21`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-25`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-26`
 - **Образ контейнера** `ghcr.io/damian-buho/b19/java:temurin-27`
-- **Образ контейнера** `damianbuho/b19-java:oracle-21`
 - **Образ контейнера** `damianbuho/b19-java:oracle-25`
 - **Образ контейнера** `damianbuho/b19-java:oracle-26`
 - **Образ контейнера** `damianbuho/b19-java:oracle-27`
-- **Образ контейнера** `damianbuho/b19-java:temurin-21`
 - **Образ контейнера** `damianbuho/b19-java:temurin-25`
 - **Образ контейнера** `damianbuho/b19-java:temurin-26`
 - **Образ контейнера** `damianbuho/b19-java:temurin-27`
@@ -56,18 +52,18 @@ JDK від Oracle та Temurin у серіях 21, 25, 26 і 27, з увімкн
 ### Завантажити з GHCR — linux/amd64
 
 ```sh
-docker pull ghcr.io/damian-buho/b19/java:oracle-21
+docker pull ghcr.io/damian-buho/b19/java:oracle-25
 ```
 
 ### Завантажити з DockerHub — linux/amd64
 
 ```sh
-docker pull damianbuho/b19-java:oracle-21
+docker pull damianbuho/b19-java:oracle-25
 ```
 
 Дистрибутив: `oracle` | `temurin`
 
-Серія: `21` | `25` | `26` | `27`
+Серія: `25` | `26` | `27`
 
 Стабільні випуски також публікують теґи `X.Y.Z`, `X.Y` і `X` — завантажте той рівень точності, який хочете зафіксувати.
 
@@ -76,12 +72,12 @@ docker pull damianbuho/b19-java:oracle-21
 ### Завантажити з Kiota — linux/amd64
 
 ```sh
-docker pull kiota.ch/b19/java:oracle-21
+docker pull kiota.ch/b19/java:oracle-25
 ```
 
 Дистрибутив: `oracle` | `temurin`
 
-Серія: `21` | `25` | `26` | `27`
+Серія: `25` | `26` | `27`
 
 ## Використання
 
@@ -90,18 +86,18 @@ docker pull kiota.ch/b19/java:oracle-21
 ### З GHCR
 
 ```dockerfile
-FROM ghcr.io/damian-buho/b19/java:oracle-21
+FROM ghcr.io/damian-buho/b19/java:oracle-25
 ```
 
 ### З DockerHub
 
 ```dockerfile
-FROM damianbuho/b19-java:oracle-21
+FROM damianbuho/b19-java:oracle-25
 ```
 
 Дистрибутив: `oracle` | `temurin`
 
-Серія: `21` | `25` | `26` | `27`
+Серія: `25` | `26` | `27`
 
 Для рекомендованого багатоетапного шаблону та системи хуків збірки (build.d) створіть похідний проєкт за допомогою `b19/scripts/scaffold.sh` з [m6e/b19](https://kiota.ch/m6e/b19).
 

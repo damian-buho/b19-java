@@ -8,7 +8,7 @@ pf-cli-managed: yes
 
 # B19 / Java
 
-Oracle and Temurin JDKs in series 21, 25, 26 and 27, with ZGC enabled, slim jlink runtimes for downstream images, and optional JMX metrics.
+Oracle and Temurin JDKs in series 25, 26 and 27, with ZGC enabled, slim jlink runtimes for downstream images, and optional JMX metrics.
 
 [![Stand with Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://damian-buho.github.io/support-ukraine/) [![Projectfile inside](https://badges.kiota.ch/static/v1?label=projectfile&message=inside&labelColor=0d0d0d&color=8c6723&style=flat-square)](https://projectfile.org) [![License](https://badges.kiota.ch/static/v1?label=license&message=MIT&color=1e5913&style=flat-square)](LICENSE) [![PRs welcome](https://badges.kiota.ch/static/v1?label=PRs&message=welcome&color=1e5913&style=flat-square)](CONTRIBUTING.md) [![REUSE compliance](https://api.reuse.software/badge/github.com/damian-buho/b19-java)](https://api.reuse.software/info/github.com/damian-buho/b19-java)
 
@@ -30,19 +30,15 @@ It also inherits the features of B19 / Ubuntu — see [Features](docs/FEATURES.m
 
 ## What this provides
 
-- **Container image** `ghcr.io/damian-buho/b19/java:oracle-21`
 - **Container image** `ghcr.io/damian-buho/b19/java:oracle-25`
 - **Container image** `ghcr.io/damian-buho/b19/java:oracle-26`
 - **Container image** `ghcr.io/damian-buho/b19/java:oracle-27`
-- **Container image** `ghcr.io/damian-buho/b19/java:temurin-21`
 - **Container image** `ghcr.io/damian-buho/b19/java:temurin-25`
 - **Container image** `ghcr.io/damian-buho/b19/java:temurin-26`
 - **Container image** `ghcr.io/damian-buho/b19/java:temurin-27`
-- **Container image** `damianbuho/b19-java:oracle-21`
 - **Container image** `damianbuho/b19-java:oracle-25`
 - **Container image** `damianbuho/b19-java:oracle-26`
 - **Container image** `damianbuho/b19-java:oracle-27`
-- **Container image** `damianbuho/b19-java:temurin-21`
 - **Container image** `damianbuho/b19-java:temurin-25`
 - **Container image** `damianbuho/b19-java:temurin-26`
 - **Container image** `damianbuho/b19-java:temurin-27`
@@ -54,18 +50,18 @@ Pull the published container image:
 ### Pull from GHCR — linux/amd64
 
 ```sh
-docker pull ghcr.io/damian-buho/b19/java:oracle-21
+docker pull ghcr.io/damian-buho/b19/java:oracle-25
 ```
 
 ### Pull from DockerHub — linux/amd64
 
 ```sh
-docker pull damianbuho/b19-java:oracle-21
+docker pull damianbuho/b19-java:oracle-25
 ```
 
 Distribution: `oracle` | `temurin`
 
-Series: `21` | `25` | `26` | `27`
+Series: `25` | `26` | `27`
 
 Stable releases also publish `X.Y.Z`, `X.Y` and `X` tags — pull the precision you want to pin.
 
@@ -74,12 +70,12 @@ If the registries above are unreachable, pull from the origin instead:
 ### Pull from Kiota — linux/amd64
 
 ```sh
-docker pull kiota.ch/b19/java:oracle-21
+docker pull kiota.ch/b19/java:oracle-25
 ```
 
 Distribution: `oracle` | `temurin`
 
-Series: `21` | `25` | `26` | `27`
+Series: `25` | `26` | `27`
 
 ## Usage
 
@@ -88,18 +84,18 @@ Build on top of this image:
 ### From GHCR
 
 ```dockerfile
-FROM ghcr.io/damian-buho/b19/java:oracle-21
+FROM ghcr.io/damian-buho/b19/java:oracle-25
 ```
 
 ### From DockerHub
 
 ```dockerfile
-FROM damianbuho/b19-java:oracle-21
+FROM damianbuho/b19-java:oracle-25
 ```
 
 Distribution: `oracle` | `temurin`
 
-Series: `21` | `25` | `26` | `27`
+Series: `25` | `26` | `27`
 
 For the recommended multi-stage pattern and the build-hook system (build.d), scaffold a derivative with `b19/scripts/scaffold.sh` from [m6e/b19](https://kiota.ch/m6e/b19).
 
