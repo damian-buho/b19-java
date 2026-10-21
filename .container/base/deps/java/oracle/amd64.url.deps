@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-https://download.oracle.com/java/${M6E_SERIES}/archive/jdk-${M6E_UPSTREAM_VERSION}_linux-x64_bin.tar.gz
+https://download.oracle.com/java/${M6E_SERIES}/latest/jdk-${M6E_SERIES}_linux-x64_bin.tar.gz
