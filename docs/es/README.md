@@ -23,6 +23,7 @@ JDK de Oracle y Temurin en series 25, 26 y 27, con ZGC activado, runtimes jlink 
 ## Características
 
 - Importación de certificados CA en runtime
+- Autoridades de certificación comprometidas eliminadas del almacén de confianza del JDK
 - JDK desde el tarball upstream con elección de distribución
 - Métricas Prometheus opcionales vía JMX
 - Flags de JVM ajustados a producción

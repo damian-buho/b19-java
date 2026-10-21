@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: b19-java\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 18:05+0000\n"
+"POT-Creation-Date: 2026-10-21 00:03+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
 "Last-Translator: b19 team\n"
 "Language-Team: Spanish\n"
@@ -15,6 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .container/base/tools.d/java-ca-distrust:21
+msgid "No cacerts or blocked.certs under %s, skipped"
+msgstr "No hay cacerts ni blocked.certs en %s, omitido"
+
+#: .container/base/tools.d/java-ca-distrust:36
+msgid "%s fingerprints added to %s"
+msgstr "%s huellas añadidas a %s"
+
+#: .container/base/tools.d/java-ca-distrust:46
+msgid "Delete distrusted anchor %s"
+msgstr "Eliminar ancla desconfiada %s"
+
+#: .container/base/tools.d/java-ca-distrust:53
+msgid "Truststore %s holds no distrusted anchor"
+msgstr "El almacén de confianza %s no contiene anclas desconfiadas"
 
 #: .container/base/build.d/base/post/200-install-java.sh:13
 msgid "Extract %s"
@@ -70,15 +86,15 @@ msgstr "Crear %s"
 msgid "Export Java runtime to %s"
 msgstr "Exportar entorno de ejecución Java a %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:78
+#: .container/base/build.d/export/post/100-export-java.i.sh:80
 msgid "Export %s"
 msgstr "Exportar %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:87
+#: .container/base/build.d/export/post/100-export-java.i.sh:89
 msgid "Default %s=%s"
 msgstr "Valor predeterminado %s=%s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:90
+#: .container/base/build.d/export/post/100-export-java.i.sh:92
 msgid "Exported Java runtime: %s"
 msgstr "Entorno de ejecución Java exportado: %s"
 
@@ -129,6 +145,18 @@ msgstr "Puerto JMX no numérico: %s -- métricas no expuestas"
 #: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
 msgid "JMX exporter attached on %s:%s"
 msgstr "Exportador JMX activo en %s:%s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:18
+msgid "%s missing from %s"
+msgstr "%s falta en %s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:26
+msgid "Truststore still trusts %s"
+msgstr "El almacén de confianza todavía confía en %s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:32
+msgid "%s distrusted fingerprints blocked and absent from the truststore"
+msgstr "%s huellas desconfiadas bloqueadas y ausentes del almacén de confianza"
 
 #: .container/user/test.d/1200-javac-compile-test.sh:26
 msgid "javac-%s compile test passed"

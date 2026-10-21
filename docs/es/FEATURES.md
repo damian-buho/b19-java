@@ -19,6 +19,13 @@ SPDX-License-Identifier: MIT
 - Cada certificado se importa con su nombre de archivo como alias y con el flag `trustcacerts` activado (contraseña del truststore del sistema `changeit`).
 - El hook de importación es heredable, de modo que las imágenes derivadas construidas sobre `b19/java` obtienen el mismo comportamiento automáticamente.
 
+### Autoridades de certificación comprometidas eliminadas del almacén de confianza del JDK
+
+- Oracle y Temurin incluyen cada uno su propio `cacerts`, independiente del almacén del sistema; se recorta con la misma lista de desconfianza de b19 durante la construcción, sin esperar a una actualización del JDK.
+- Cada huella listada se añade también a la lista de bloqueo del JDK, que rechaza un intermedio comprometido en cualquier punto de la cadena, incluidas sus copias con firma cruzada.
+- La exportación reducida con `jlink` se recorta igual, y un certificado importado al arrancar no puede devolver un intermedio bloqueado.
+- `B19_CA_DISTRUST` añade huellas, y `B19_CA_DISTRUST_ENABLED=false` deja el almacén del JDK tal como se distribuye.
+
 ### JDK desde el tarball upstream con elección de distribución
 
 - El JDK se instala desde tarballs upstream (no APT), fijado por distribución, serie y arquitectura con verificación SHA-512.

@@ -60,6 +60,7 @@
 
   b19-run "JAVA" "$(_p "Create %s" "/export${B19_PREFIX}")" -- mkdir --parents "/export${B19_PREFIX}"
   b19-run "JAVA" "$(_p "Export Java runtime to %s" "/export${B19_PREFIX}")" -- cp --archive "${JAVA_EXPORT_RUNTIME}/." "/export${B19_PREFIX}/"
+  java-ca-distrust "/export${B19_PREFIX}"
 
   # Runtime hooks, JVM flags template and version test, taken from where the builder already has them
   JAVA_EXPORT_FILE_LIST=(
@@ -70,6 +71,7 @@
     "${B19_ENTRYPOINT_PATH}/1160-enable-jmx-exporter.i.sh"
     "${B19_HOME}/vm.options.j2"
     "${B19_TEST_PATH}/1000-check-java-version.sh"
+    "${B19_TEST_PATH}/1100-check-ca-distrust.sh"
   )
   if [ "${B19_JAVA_EXPORT_JMX}" = "true" ]; then
     JAVA_EXPORT_FILE_LIST+=("${B19_HOME}/jmx-exporter")

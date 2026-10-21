@@ -21,6 +21,7 @@ Oracle and Temurin JDKs in series 25, 26 and 27, with ZGC enabled, slim jlink ru
 ## Features
 
 - Runtime CA certificate import
+- Compromised certificate authorities removed from the JDK truststore
 - JDK from upstream tarball with distribution choice
 - Opt-in Prometheus metrics via JMX
 - Production-tuned JVM flags

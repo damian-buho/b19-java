@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+  set -euo pipefail
+
+  # shellcheck source=/dev/null
+  . b19-i18n
+
+  JAVA_DISTRUST_LIST="$(b19-ca-distrust list)"
+  [ -n "${JAVA_DISTRUST_LIST}" ] || exit 0
+
+  JAVA_DISTRUST_OWN="$(readlink --canonicalize "$(dirname "$(readlink --canonicalize "$(command -v keytool)")")/../lib/security/cacerts")"
+
+  for JAVA_DISTRUST_HOME in "$@"; do
+    JAVA_DISTRUST_STORE="${JAVA_DISTRUST_HOME}/lib/security/cacerts"
+    JAVA_DISTRUST_BLOCKED="${JAVA_DISTRUST_HOME}/lib/security/blocked.certs"
+    if [ ! -f "${JAVA_DISTRUST_STORE}" ] || [ ! -f "${JAVA_DISTRUST_BLOCKED}" ]; then
+      b19-log warn "JAVA" "$(_p "No cacerts or blocked.certs under %s, skipped" "${JAVA_DISTRUST_HOME}")"
+      continue
+    fi
+    JAVA_DISTRUST_ARGS=(-keystore "${JAVA_DISTRUST_STORE}")
+    [ "$(readlink --canonicalize "${JAVA_DISTRUST_STORE}")" != "${JAVA_DISTRUST_OWN}" ] || JAVA_DISTRUST_ARGS=(-cacerts)
+    exec {JAVA_DISTRUST_LOCK}<"${JAVA_DISTRUST_STORE}"
+    flock --timeout 60 "${JAVA_DISTRUST_LOCK}"
+
+    # Appends every distrusted fingerprint to the JDK blocklist, which rejects it anywhere in a chain
+    JAVA_DISTRUST_ADDED=0
+    while IFS= read -r JAVA_DISTRUST_PRINT; do
+      grep --quiet --fixed-strings --line-regexp "${JAVA_DISTRUST_PRINT}" "${JAVA_DISTRUST_BLOCKED}" && continue
+      printf '%s\n' "${JAVA_DISTRUST_PRINT}" >> "${JAVA_DISTRUST_BLOCKED}"
+      JAVA_DISTRUST_ADDED=$((JAVA_DISTRUST_ADDED + 1))
+    done <<<"${JAVA_DISTRUST_LIST}"
+    b19-log info "JAVA" "$(_p "%s fingerprints added to %s" "${JAVA_DISTRUST_ADDED}" "${JAVA_DISTRUST_BLOCKED}")"
+
+    # Deletes every truststore anchor whose fingerprint is distrusted
+    JAVA_DISTRUST_ALIAS=""
+    while IFS= read -r JAVA_DISTRUST_LINE; do
+      case "${JAVA_DISTRUST_LINE}" in
+        "Alias name: "*) JAVA_DISTRUST_ALIAS="${JAVA_DISTRUST_LINE#Alias name: }" ;;
+        *"SHA256: "*)
+          JAVA_DISTRUST_PRINT="$(tr --delete ':' <<<"${JAVA_DISTRUST_LINE##*SHA256: }")"
+          grep --quiet --fixed-strings --line-regexp "${JAVA_DISTRUST_PRINT}" <<<"${JAVA_DISTRUST_LIST}" || continue
+          b19-run "JAVA" "$(_p "Delete distrusted anchor %s" "${JAVA_DISTRUST_ALIAS}")" --  \
+            keytool -J-Duser.language=en -delete -alias "${JAVA_DISTRUST_ALIAS}" "${JAVA_DISTRUST_ARGS[@]}" -storepass changeit
+          ;;
+      esac
+    done < <(keytool -J-Duser.language=en -list -v "${JAVA_DISTRUST_ARGS[@]}" -storepass changeit)
+
+    exec {JAVA_DISTRUST_LOCK}<&-
+    b19-log good "JAVA" "$(_p "Truststore %s holds no distrusted anchor" "${JAVA_DISTRUST_STORE}")"
+  done

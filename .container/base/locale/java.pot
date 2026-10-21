@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: java development\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 18:05+0000\n"
+"POT-Creation-Date: 2026-10-21 00:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .container/base/tools.d/java-ca-distrust:21
+msgid "No cacerts or blocked.certs under %s, skipped"
+msgstr ""
+
+#: .container/base/tools.d/java-ca-distrust:36
+msgid "%s fingerprints added to %s"
+msgstr ""
+
+#: .container/base/tools.d/java-ca-distrust:46
+msgid "Delete distrusted anchor %s"
+msgstr ""
+
+#: .container/base/tools.d/java-ca-distrust:53
+msgid "Truststore %s holds no distrusted anchor"
+msgstr ""
 
 #: .container/base/build.d/base/post/200-install-java.sh:13
 msgid "Extract %s"
@@ -67,15 +83,15 @@ msgstr ""
 msgid "Export Java runtime to %s"
 msgstr ""
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:78
+#: .container/base/build.d/export/post/100-export-java.i.sh:80
 msgid "Export %s"
 msgstr ""
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:87
+#: .container/base/build.d/export/post/100-export-java.i.sh:89
 msgid "Default %s=%s"
 msgstr ""
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:90
+#: .container/base/build.d/export/post/100-export-java.i.sh:92
 msgid "Exported Java runtime: %s"
 msgstr ""
 
@@ -125,6 +141,18 @@ msgstr ""
 
 #: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
 msgid "JMX exporter attached on %s:%s"
+msgstr ""
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:18
+msgid "%s missing from %s"
+msgstr ""
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:26
+msgid "Truststore still trusts %s"
+msgstr ""
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:32
+msgid "%s distrusted fingerprints blocked and absent from the truststore"
 msgstr ""
 
 #: .container/user/test.d/1200-javac-compile-test.sh:26

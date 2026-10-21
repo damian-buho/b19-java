@@ -38,6 +38,7 @@ JDK runtime image with 2D axis: distribution x series. Base for scala, and used 
 - `java.logging` is in the default export set because the JDK’s default CDS class list preloads it; without it the CDS dump prints a warning per class
 - The exported runtime has no `javac`, `jar` or `jdeps`, so `test.d/1200` and `1300` stay in this image only
 - Runtime CA import: `entrypoint.d/1100-add-certs-to-java.i.sh` — seeds `${B19_HOME}/lib/security/cacerts` from the system truststore, imports each `${B19_HOME}/ca-certs/*.pem` via `keytool`, and points Java at the copy (no rebuild required)
+- CA distrust: `base/post/220-distrust-java-certificates.i.sh` and the export hook run `tools.d/java-ca-distrust`, which deletes every `cacerts` anchor in `b19-ca-distrust list` and appends the whole list to `lib/security/blocked.certs`. Both are needed: `blocked.certs` rejects a listed certificate anywhere in the path but never a trust anchor. `jlink` rebuilds `lib/security` from `jmods`, so the export is cut after it
 - Opt-in Prometheus metrics: `entrypoint.d/1160-enable-jmx-exporter.i.sh` — attaches the Prometheus JMX exporter javaagent (pinned jar under `${B19_HOME}/jmx-exporter/`, default JVM-only config) via `JAVA_TOOL_OPTIONS` when `B19_JAVA_JMX_ENABLED=true`, so every `java` invocation (including Tanuki-wrapped downstream JVMs) exposes `/metrics`. Disabled by default, loopback bind by default
 
 ## ENV

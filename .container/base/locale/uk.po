@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: b19-java\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-09 18:05+0000\n"
+"POT-Creation-Date: 2026-10-21 00:03+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
 "Last-Translator: b19 team\n"
 "Language-Team: Ukrainian\n"
@@ -16,6 +16,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: .container/base/tools.d/java-ca-distrust:21
+msgid "No cacerts or blocked.certs under %s, skipped"
+msgstr "У %s немає cacerts або blocked.certs, пропущено"
+
+#: .container/base/tools.d/java-ca-distrust:36
+msgid "%s fingerprints added to %s"
+msgstr "Відбитків додано: %s до %s"
+
+#: .container/base/tools.d/java-ca-distrust:46
+msgid "Delete distrusted anchor %s"
+msgstr "Видалити недовірений кореневий сертифікат %s"
+
+#: .container/base/tools.d/java-ca-distrust:53
+msgid "Truststore %s holds no distrusted anchor"
+msgstr "Сховище довіри %s не містить недовірених кореневих сертифікатів"
 
 #: .container/base/build.d/base/post/200-install-java.sh:13
 msgid "Extract %s"
@@ -70,15 +86,15 @@ msgstr "Створити %s"
 msgid "Export Java runtime to %s"
 msgstr "Експортувати середовище виконання Java до %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:78
+#: .container/base/build.d/export/post/100-export-java.i.sh:80
 msgid "Export %s"
 msgstr "Експортувати %s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:87
+#: .container/base/build.d/export/post/100-export-java.i.sh:89
 msgid "Default %s=%s"
 msgstr "Типове значення %s=%s"
 
-#: .container/base/build.d/export/post/100-export-java.i.sh:90
+#: .container/base/build.d/export/post/100-export-java.i.sh:92
 msgid "Exported Java runtime: %s"
 msgstr "Експортоване середовище виконання Java: %s"
 
@@ -130,6 +146,18 @@ msgstr "Порт JMX не числовий: %s -- метрики не експо
 #: .container/user/entrypoint.d/1160-enable-jmx-exporter.i.sh:34
 msgid "JMX exporter attached on %s:%s"
 msgstr "Експортер JMX приєднано на %s:%s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:18
+msgid "%s missing from %s"
+msgstr "%s відсутній у %s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:26
+msgid "Truststore still trusts %s"
+msgstr "Сховище довіри досі довіряє %s"
+
+#: .container/user/test.d/1100-check-ca-distrust.sh:32
+msgid "%s distrusted fingerprints blocked and absent from the truststore"
+msgstr "Недовірених відбитків заблоковано й вилучено зі сховища довіри: %s"
 
 #: .container/user/test.d/1200-javac-compile-test.sh:26
 msgid "javac-%s compile test passed"
