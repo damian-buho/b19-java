@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
 #
 # SPDX-License-Identifier: MIT
-25.0.5
+# The version the JDK reports, verbatim: the archive file name spells it the same way
+25.0.5.0.2
