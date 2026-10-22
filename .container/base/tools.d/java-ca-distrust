@@ -9,6 +9,84 @@
   # shellcheck source=/dev/null
   . b19-i18n
 
+  # Rewrites the digest the module image pins for a file, so jlink accepts it
+  java_refresh_jlink_pin() {
+    local JAVA_PIN_HOME=""
+    local JAVA_PIN_TARGET=""
+    local JAVA_PIN_MODULES=""
+    local JAVA_PIN_REL=""
+    local JAVA_PIN_PATTERN=""
+    local JAVA_PIN_ENTRY=""
+    local JAVA_PIN_OLD=""
+    local JAVA_PIN_NEW=""
+    local JAVA_PIN_CHECK=""
+    local JAVA_PIN_OFFSET=""
+    local JAVA_PIN_COUNT=0
+    local JAVA_PIN_DIGEST=""
+
+    JAVA_PIN_HOME="${1}"
+    JAVA_PIN_TARGET="${2}"
+    JAVA_PIN_MODULES="${JAVA_PIN_HOME}/lib/modules"
+
+    [ -f "${JAVA_PIN_MODULES}" ] || return 0
+    [ -f "${JAVA_PIN_TARGET}" ] || return 0
+
+    JAVA_PIN_REL="${JAVA_PIN_TARGET#"${JAVA_PIN_HOME}/"}"
+    JAVA_PIN_PATTERN="${JAVA_PIN_REL//./\\.}"
+
+    # A linked runtime carries no jdk.jlink, so it pins no digest at all
+    if ! grep --text --quiet --fixed-strings "runtimelink/fs_" "${JAVA_PIN_MODULES}"; then
+      b19-log debug "JAVA" "$(_p "No jlink digest manifest in %s, skipped" "${JAVA_PIN_MODULES}")"
+      return 0
+    fi
+
+    JAVA_PIN_ENTRY="$(grep --text --max-count=1 --only-matching --extended-regexp '[0-9]+\|[0-9]+\|[0-9a-f]+\|'"${JAVA_PIN_PATTERN}" "${JAVA_PIN_MODULES}" || true)"
+    if [ -z "${JAVA_PIN_ENTRY}" ]; then
+      b19-log warn "JAVA" "$(_p "The manifest pins no %s, skipped" "${JAVA_PIN_REL}")"
+      return 0
+    fi
+
+    JAVA_PIN_OLD="$(cut --delimiter='|' --fields=3 <<<"${JAVA_PIN_ENTRY}")"
+
+    case "${#JAVA_PIN_OLD}" in
+      64) JAVA_PIN_DIGEST="sha256sum" ;;
+      128) JAVA_PIN_DIGEST="sha512sum" ;;
+      *)
+        b19-log error "JAVA" "$(_p "Unknown digest %s pinned for %s" "${JAVA_PIN_OLD}" "${JAVA_PIN_REL}")"
+        return 1
+        ;;
+    esac
+
+    JAVA_PIN_NEW="$("${JAVA_PIN_DIGEST}" "${JAVA_PIN_TARGET}" | cut --delimiter=' ' --fields=1)"
+    if [ "${JAVA_PIN_NEW}" = "${JAVA_PIN_OLD}" ]; then
+      b19-log debug "JAVA" "$(_p "The digest pinned for %s is current" "${JAVA_PIN_REL}")"
+      return 0
+    fi
+
+    JAVA_PIN_COUNT="$(grep --text --only-matching --fixed-strings "${JAVA_PIN_OLD}" "${JAVA_PIN_MODULES}" | wc --lines)"
+    if [ "${JAVA_PIN_COUNT}" -ne 1 ]; then
+      b19-log error "JAVA" "$(_p "The digest %s appears %s times in %s" "${JAVA_PIN_OLD}" "${JAVA_PIN_COUNT}" "${JAVA_PIN_MODULES}")"
+      return 1
+    fi
+
+    # The manifest is stored uncompressed and the digest is fixed-length, so an in-place rewrite keeps the image valid
+    JAVA_PIN_OFFSET="$(grep --text --max-count=1 --byte-offset --only-matching --fixed-strings "${JAVA_PIN_OLD}" "${JAVA_PIN_MODULES}" | cut --delimiter=: --fields=1)"
+    printf '%s' "${JAVA_PIN_NEW}" | dd of="${JAVA_PIN_MODULES}" bs=1 seek="${JAVA_PIN_OFFSET}" conv=notrunc status=none
+
+    JAVA_PIN_CHECK="$(grep --text --max-count=1 --only-matching --extended-regexp '[0-9]+\|[0-9]+\|[0-9a-f]+\|'"${JAVA_PIN_PATTERN}" "${JAVA_PIN_MODULES}" | cut --delimiter='|' --fields=3)"
+    if [ "${JAVA_PIN_CHECK}" != "${JAVA_PIN_NEW}" ]; then
+      b19-log error "JAVA" "$(_p "The manifest still pins %s for %s" "${JAVA_PIN_CHECK}" "${JAVA_PIN_REL}")"
+      return 1
+    fi
+
+    if [ -x "${JAVA_PIN_HOME}/bin/java" ] && ! "${JAVA_PIN_HOME}/bin/java" --list-modules > /dev/null 2>&1; then
+      b19-log error "JAVA" "$(_p "The module image %s is unreadable" "${JAVA_PIN_MODULES}")"
+      return 1
+    fi
+
+    b19-log info "JAVA" "$(_p "The digest pinned for %s rewritten in %s" "${JAVA_PIN_REL}" "${JAVA_PIN_MODULES}")"
+  }
+
   JAVA_DISTRUST_LIST="$(b19-ca-distrust list)"
   [ -n "${JAVA_DISTRUST_LIST}" ] || exit 0
 
@@ -34,6 +112,9 @@
       JAVA_DISTRUST_ADDED=$((JAVA_DISTRUST_ADDED + 1))
     done <<<"${JAVA_DISTRUST_LIST}"
     b19-log info "JAVA" "$(_p "%s fingerprints added to %s" "${JAVA_DISTRUST_ADDED}" "${JAVA_DISTRUST_BLOCKED}")"
+
+    # jlink verifies the blocklist against the digest the module image pins for it
+    java_refresh_jlink_pin "${JAVA_DISTRUST_HOME}" "${JAVA_DISTRUST_BLOCKED}"
 
     # Deletes every truststore anchor whose fingerprint is distrusted
     JAVA_DISTRUST_ALIAS=""

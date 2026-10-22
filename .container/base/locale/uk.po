@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: b19-java\n"
 "Report-Msgid-Bugs-To: https://github.com/damian-buho/b19-java/issues\n"
-"POT-Creation-Date: 2026-10-21 00:03+0000\n"
+"POT-Creation-Date: 2026-10-22 00:18+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
 "Last-Translator: b19 team\n"
 "Language-Team: Ukrainian\n"
@@ -17,19 +17,51 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: .container/base/tools.d/java-ca-distrust:21
+#: .container/base/tools.d/java-ca-distrust:39
+msgid "No jlink digest manifest in %s, skipped"
+msgstr "У %s немає маніфесту дайджестів jlink, пропущено"
+
+#: .container/base/tools.d/java-ca-distrust:45
+msgid "The manifest pins no %s, skipped"
+msgstr "Маніфест не фіксує %s, пропущено"
+
+#: .container/base/tools.d/java-ca-distrust:55
+msgid "Unknown digest %s pinned for %s"
+msgstr "Невідомий дайджест %s, зафіксований для %s"
+
+#: .container/base/tools.d/java-ca-distrust:62
+msgid "The digest pinned for %s is current"
+msgstr "Дайджест, зафіксований для %s, актуальний"
+
+#: .container/base/tools.d/java-ca-distrust:68
+msgid "The digest %s appears %s times in %s"
+msgstr "Дайджест %s трапляється %s разів у %s"
+
+#: .container/base/tools.d/java-ca-distrust:78
+msgid "The manifest still pins %s for %s"
+msgstr "Маніфест досі фіксує %s для %s"
+
+#: .container/base/tools.d/java-ca-distrust:83
+msgid "The module image %s is unreadable"
+msgstr "Зображення модулів %s не читається"
+
+#: .container/base/tools.d/java-ca-distrust:87
+msgid "The digest pinned for %s rewritten in %s"
+msgstr "Дайджест, зафіксований для %s, перезаписано у %s"
+
+#: .container/base/tools.d/java-ca-distrust:99
 msgid "No cacerts or blocked.certs under %s, skipped"
 msgstr "У %s немає cacerts або blocked.certs, пропущено"
 
-#: .container/base/tools.d/java-ca-distrust:36
+#: .container/base/tools.d/java-ca-distrust:114
 msgid "%s fingerprints added to %s"
 msgstr "Відбитків додано: %s до %s"
 
-#: .container/base/tools.d/java-ca-distrust:46
+#: .container/base/tools.d/java-ca-distrust:127
 msgid "Delete distrusted anchor %s"
 msgstr "Видалити недовірений кореневий сертифікат %s"
 
-#: .container/base/tools.d/java-ca-distrust:53
+#: .container/base/tools.d/java-ca-distrust:134
 msgid "Truststore %s holds no distrusted anchor"
 msgstr "Сховище довіри %s не містить недовірених кореневих сертифікатів"
 
