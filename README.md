@@ -44,7 +44,7 @@ It also inherits the features of B19 / Ubuntu — see [Features](docs/FEATURES.m
 
 Pull the published container image:
 
-### Pull from GHCR — linux/amd64
+### Pull from GHCR — linux/amd64, linux/arm64, linux/riscv64
 
 ```sh
 docker pull ghcr.io/damian-buho/b19/java:oracle-25

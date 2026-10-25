@@ -46,7 +46,7 @@ JDK від Oracle та Temurin у серіях 25 і 27, з увімкненим
 
 Завантажте опублікований образ контейнера:
 
-### Завантажити з GHCR — linux/amd64
+### Завантажити з GHCR — linux/amd64, linux/arm64, linux/riscv64
 
 ```sh
 docker pull ghcr.io/damian-buho/b19/java:oracle-25

@@ -46,7 +46,7 @@ También hereda las características de B19 / Ubuntu; consulta [Características
 
 Descarga la imagen de contenedor publicada:
 
-### Descargar de GHCR — linux/amd64
+### Descargar de GHCR — linux/amd64, linux/arm64, linux/riscv64
 
 ```sh
 docker pull ghcr.io/damian-buho/b19/java:oracle-25

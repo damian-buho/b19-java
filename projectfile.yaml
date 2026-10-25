@@ -81,6 +81,10 @@ org:
     scaffold:
       root-stage: root
   projectfile:
+    architecture:
+      - amd64
+      - arm64
+      - riscv64
     build:
       args:
         B19_JAVA_DISTRO: oracle
@@ -102,6 +106,9 @@ org:
           B19_JAVA_SERIES:
             - 25
             - 27
+        exclude:
+          - {B19_JAVA_DISTRO: oracle, M6E_ARCH: riscv64}
+          - {B19_JAVA_DISTRO: temurin, B19_JAVA_SERIES: 25, M6E_ARCH: riscv64}
     conventions:
       fragments:
         parents:

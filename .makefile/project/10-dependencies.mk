@@ -76,6 +76,15 @@ $(FETCH_PATH)/.temurin.27.arm64.stamp: .container/base/deps/java/temurin/arm64.u
 
 PREREQUISITES += .container/base/deps/java/temurin/27/arm64.hash.deps
 
+$(FETCH_PATH)/.temurin.27.riscv64.stamp: .container/base/deps/java/temurin/27/riscv64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=riscv64 .makefile/container/scripts/fetch.sh java/temurin
+	touch $@
+
+.container/base/deps/java/temurin/27/riscv64.hash.deps: $(FETCH_PATH)/.temurin.27.riscv64.stamp
+	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=riscv64 .makefile/container/scripts/update-hash.sh java/temurin
+
+PREREQUISITES += .container/base/deps/java/temurin/27/riscv64.hash.deps
+
 $(FETCH_PATH)/.jmx-exporter.1.6.0.stamp: .container/base/deps/jmx-exporter/url.deps .container/base/deps/jmx-exporter/version.deps
 	M6E_DEPS_STAGE=base .makefile/container/scripts/fetch.sh jmx-exporter
 	touch $@
