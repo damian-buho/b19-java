@@ -133,7 +133,8 @@ jobs:
           network: ci-b19-java-${{ matrix.B19_JAVA_DISTRO }}-${{ matrix.B19_JAVA_SERIES }}-${{ env.M6E_RUN_SCOPE }}-network
   documentation-passes-lint:
     runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
+    needs: ["runner-is-ready"]
+    if: ${{ !cancelled() && needs.runner-is-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -425,7 +426,8 @@ jobs:
           run: pf-bridge check
   projectfile-is-valid:
     runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
+    needs: ["runner-is-ready"]
+    if: ${{ !cancelled() && needs.runner-is-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -584,7 +586,8 @@ jobs:
             ${{ vars.PF_CLI_IMAGE || format('{0}/cli', vars.SOURCE_DOCKER_REGISTRY || 'ghcr.io/projectfile-org') }} ${{ env.M6E_TAG }} pf-cli -
   source-is-compliant:
     runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
+    needs: ["runner-is-ready"]
+    if: ${{ !cancelled() && needs.runner-is-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -606,7 +609,8 @@ jobs:
           run: reuse lint
   source-is-secure:
     runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
+    needs: ["runner-is-ready"]
+    if: ${{ !cancelled() && needs.runner-is-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     env:
       CI_IGNORE_VULNERABILITIES: ${{ vars.CI_IGNORE_VULNERABILITIES }}
     steps:
@@ -684,7 +688,8 @@ jobs:
           overwrite: true
   source-passes-lint:
     runs-on: ubuntu-26.04
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)
+    needs: ["runner-is-ready"]
+    if: ${{ !cancelled() && needs.runner-is-ready.result == 'success' && ((github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository)) }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
