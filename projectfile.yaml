@@ -15,8 +15,8 @@ identity:
     en: Oracle and Temurin JDKs in series 25 and 27, with ZGC enabled, slim jlink runtimes for downstream images, and optional JMX metrics.
     es: JDK de Oracle y Temurin en series 25 y 27, con ZGC activado, runtimes jlink ligeros para imágenes derivadas y métricas JMX opcionales.
     uk: JDK від Oracle та Temurin у серіях 25 і 27, з увімкненим ZGC, легкими jlink-середовищами для похідних образів і опційними JMX-метриками.
-  version: 0.6.5
-  released: "2026-10-19"
+  version: 0.7.0
+  released: "2026-10-24"
   visibility: public
 includes:
   - .makefile/b19/ci.yaml

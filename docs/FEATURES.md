@@ -68,6 +68,7 @@ SPDX-License-Identifier: MIT
 - The service PID is tracked for signal forwarding — Docker stop gracefully terminates the main process.
 - Log levels for stdout and stderr streams are independently configurable.
 - Exit code of the service is captured and available to downstream hooks.
+- Passthrough mode hands a service’s own log to the collector byte for byte, so parsers built for that daemon still match.
 
 ### Cached artifact downloads with integrity verification
 
@@ -96,6 +97,13 @@ SPDX-License-Identifier: MIT
 - Cross-cutting setup (CA trust, locale, shared installs) is written once and runs on every stage automatically.
 - Downstream images inherit parent build logic through the layer overlay — no duplication needed.
 - Non-inheritable one-off setup is cleaned up after execution to avoid leaking into later stages.
+
+### Compromised certificate authorities distrusted ahead of upstream
+
+- Certificates listed by SHA-256 fingerprint are removed from the system trust store at build time, before the distribution ships its own fix.
+- One list serves the whole image lineage, and `b19-ca-distrust bundle` cuts any vendored PEM bundle from it too.
+- Ships distrusting the eMudhra intermediates whose private keys can be recovered (October 2026), together with their cross-signs and roots.
+- Downstream images add fingerprints with one variable or one file, and `B19_CA_DISTRUST_ENABLED=false` turns the cut off. [How-to](how-to/use-ca-distrust.md)
 
 ### Automatic CPU count detection
 
@@ -152,6 +160,7 @@ See [use-healthcheck.d](../how-to/use-healthcheck.d.md) for the check list, slot
 - Messages below the configured verbosity are silently discarded, keeping production logs clean.
 - Colors auto-detect terminal support and respect `NO_COLOR=1`.
 - Pipable: command output can be routed through the logger to apply level filtering and tags.
+- `B19_LOG_FORMAT=json` turns every line into one JSON object a log pipeline reads without a parser; a service’s own JSON lines pass through untouched.
 
 ### Non-root container by default
 

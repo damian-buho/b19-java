@@ -70,6 +70,7 @@ SPDX-License-Identifier: MIT
 - Se hace seguimiento del PID del servicio para el reenvío de señales: Docker stop termina de forma elegante el proceso principal.
 - Los niveles de log de los flujos stdout y stderr se configuran de forma independiente.
 - El código de salida del servicio se captura y queda disponible para los hooks posteriores.
+- El modo passthrough entrega el log propio del servicio al recolector byte a byte, así los parsers hechos para ese demonio siguen coincidiendo.
 
 ### Descargas de artefactos con caché y verificación de integridad (b19-fetch)
 
@@ -99,6 +100,13 @@ SPDX-License-Identifier: MIT
 - El ámbito reservado `always/{pre,post}` enmarca cada etapa, se llame como se llame, de modo que la configuración transversal se escribe una vez en lugar de por etapa.
 - Los hooks heredables se propagan a las imágenes derivadas automáticamente vía superposición de capas de Docker: las derivadas obtienen gratis la lógica de compilación del padre.
 - Los hooks no heredables se limpian tras su ejecución para evitar que se filtren en etapas posteriores.
+
+### Autoridades de certificación comprometidas desconfiadas antes que upstream
+
+- Los certificados listados por huella SHA-256 se eliminan del almacén de confianza del sistema durante la construcción, antes de que la distribución publique su propia corrección.
+- Una sola lista sirve a todo el linaje de imágenes, y `b19-ca-distrust bundle` recorta con ella cualquier paquete PEM incluido.
+- Incluye la desconfianza de los intermedios de eMudhra cuyas claves privadas pueden recuperarse (octubre de 2026), junto con sus firmas cruzadas y raíces.
+- Las imágenes derivadas añaden huellas con una variable o un archivo, y `B19_CA_DISTRUST_ENABLED=false` desactiva el recorte. [Guía](../how-to/use-ca-distrust.md)
 
 ### Detección automática del número de CPUs (NUMPROCS)
 
@@ -155,6 +163,7 @@ Consulte [use-healthcheck.d](../how-to/use-healthcheck.d.md) para la lista de co
 - Los mensajes por debajo de la verbosidad configurada se descartan silenciosamente, manteniendo limpios los logs de producción.
 - Los colores autodetectan el soporte del terminal y respetan `NO_COLOR=1`.
 - Encauzable: la salida de comandos puede enrutarse a través del logger para aplicar filtrado por nivel y tags.
+- `B19_LOG_FORMAT=json` convierte cada línea en un objeto JSON que una canalización de logs lee sin parser; las líneas JSON propias del servicio pasan intactas.
 
 ### Contenedor sin privilegios de root por defecto
 
