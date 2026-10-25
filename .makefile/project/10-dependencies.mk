@@ -40,20 +40,20 @@ $(FETCH_PATH)/.oracle.27.0.1.0.3.arm64.stamp: .container/base/deps/java/oracle/a
 
 PREREQUISITES += .container/base/deps/java/oracle/27/arm64.hash.deps
 
-$(FETCH_PATH)/.temurin.25.0.4.1.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/25/version.deps .container/base/deps/java/temurin/25/build.deps
+$(FETCH_PATH)/.temurin.25.0.5.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/25/version.deps .container/base/deps/java/temurin/25/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
 
-.container/base/deps/java/temurin/25/amd64.hash.deps: $(FETCH_PATH)/.temurin.25.0.4.1.amd64.stamp
+.container/base/deps/java/temurin/25/amd64.hash.deps: $(FETCH_PATH)/.temurin.25.0.5.amd64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=amd64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/25/amd64.hash.deps
 
-$(FETCH_PATH)/.temurin.25.0.4.1.arm64.stamp: .container/base/deps/java/temurin/arm64.url.deps .container/base/deps/java/temurin/25/version.deps .container/base/deps/java/temurin/25/build.deps
+$(FETCH_PATH)/.temurin.25.0.5.arm64.stamp: .container/base/deps/java/temurin/arm64.url.deps .container/base/deps/java/temurin/25/version.deps .container/base/deps/java/temurin/25/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=arm64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
 
-.container/base/deps/java/temurin/25/arm64.hash.deps: $(FETCH_PATH)/.temurin.25.0.4.1.arm64.stamp
+.container/base/deps/java/temurin/25/arm64.hash.deps: $(FETCH_PATH)/.temurin.25.0.5.arm64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=25 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/25/arm64.hash.deps
