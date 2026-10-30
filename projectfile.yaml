@@ -125,3 +125,12 @@ repositories:
 technologies:
   - java
   - jvm
+upstream:
+  - license: GPL-2.0-only WITH Classpath-exception-2.0
+    name: Eclipse Temurin
+    url: https://adoptium.net
+  - name: Oracle JDK
+    url: https://www.oracle.com/java/
+  - license: Apache-2.0
+    name: Prometheus JMX Exporter
+    url: https://github.com/prometheus/jmx_exporter
