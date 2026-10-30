@@ -18,6 +18,17 @@ Oracle and Temurin JDKs in series 25 and 27, with ZGC enabled, slim jlink runtim
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/b19/java/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/b19/java/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/b19/java/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/b19/java/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions)
 
+## Upstream
+
+This project packages [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
+Thanks to: Eclipse Adoptium
+
+This project packages [Oracle JDK](https://www.oracle.com/java/) (its own license).
+Thanks to: Oracle
+
+This project packages [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
+Thanks to: Doug Hoard and Fabian Stäber (maintainers), Brian Brazil (original author)
+
 ## Features
 
 - Runtime CA certificate import
@@ -138,17 +149,6 @@ Pipeline entry points:
 ## Links
 
 - [Projectfile Specification](https://projectfile.org)
-
-## Upstream
-
-This project packages [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
-Thanks to: Eclipse Adoptium
-
-This project packages [Oracle JDK](https://www.oracle.com/java/) (its own license).
-Thanks to: Oracle
-
-This project packages [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
-Thanks to: The Prometheus Authors
 
 ## License
 

@@ -20,6 +20,17 @@ JDK de Oracle y Temurin en series 25 y 27, con ZGC activado, runtimes jlink lige
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/b19/java/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/b19/java/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/b19/java/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/b19/java/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions)
 
+## Proyecto original
+
+Este proyecto empaqueta [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
+Gracias a: Eclipse Adoptium
+
+Este proyecto empaqueta [Oracle JDK](https://www.oracle.com/java/) (su propia licencia).
+Gracias a: Oracle
+
+Este proyecto empaqueta [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
+Gracias a: Doug Hoard y Fabian Stäber (mantenedores), Brian Brazil (autor original)
+
 ## Características
 
 - Importación de certificados CA en runtime
@@ -140,17 +151,6 @@ Puntos de entrada de la canalización:
 ## Enlaces
 
 - [Especificación de Projectfile](https://projectfile.org)
-
-## Proyecto original
-
-Este proyecto empaqueta [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
-Gracias a: Eclipse Adoptium
-
-Este proyecto empaqueta [Oracle JDK](https://www.oracle.com/java/) (su propia licencia).
-Gracias a: Oracle
-
-Este proyecto empaqueta [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
-Gracias a: The Prometheus Authors
 
 ## Licencia
 

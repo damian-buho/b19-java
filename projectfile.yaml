@@ -133,7 +133,10 @@ upstream:
   - authors: Oracle
     name: Oracle JDK
     url: https://www.oracle.com/java/
-  - authors: The Prometheus Authors
+  - authors:
+      en: Doug Hoard and Fabian Stäber (maintainers), Brian Brazil (original author)
+      es: Doug Hoard y Fabian Stäber (mantenedores), Brian Brazil (autor original)
+      uk: Doug Hoard та Fabian Stäber (супровідники), Brian Brazil (початковий автор)
     license: Apache-2.0
     name: Prometheus JMX Exporter
     url: https://github.com/prometheus/jmx_exporter

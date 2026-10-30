@@ -20,6 +20,17 @@ JDK від Oracle та Temurin у серіях 25 і 27, з увімкненим
 
 [![Publish pipeline on kiota.ch](https://kiota.ch/b19/java/badges/workflows/published.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Vulnerability audit on kiota.ch](https://kiota.ch/b19/java/badges/workflows/audited.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Dependency freshness on kiota.ch](https://kiota.ch/b19/java/badges/workflows/check-outdated.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions) [![Analysis sweep on kiota.ch](https://kiota.ch/b19/java/badges/workflows/analyzed.yaml/badge.svg?style=flat-square)](https://kiota.ch/b19/java/actions)
 
+## Першоджерело
+
+Цей проєкт пакує [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
+Дякуємо: Eclipse Adoptium
+
+Цей проєкт пакує [Oracle JDK](https://www.oracle.com/java/) (власна ліцензія).
+Дякуємо: Oracle
+
+Цей проєкт пакує [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
+Дякуємо: Doug Hoard та Fabian Stäber (супровідники), Brian Brazil (початковий автор)
+
 ## Можливості
 
 - Імпорт CA-сертифікатів під час виконання
@@ -140,17 +151,6 @@ make container-build
 ## Посилання
 
 - [Специфікація Projectfile](https://projectfile.org)
-
-## Першоджерело
-
-Цей проєкт пакує [Eclipse Temurin](https://adoptium.net) (`GPL-2.0-only WITH Classpath-exception-2.0`).
-Дякуємо: Eclipse Adoptium
-
-Цей проєкт пакує [Oracle JDK](https://www.oracle.com/java/) (власна ліцензія).
-Дякуємо: Oracle
-
-Цей проєкт пакує [Prometheus JMX Exporter](https://github.com/prometheus/jmx_exporter) (`Apache-2.0`).
-Дякуємо: The Prometheus Authors
 
 ## Ліцензія
 
