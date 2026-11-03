@@ -58,29 +58,29 @@ $(FETCH_PATH)/.temurin.25.0.5.arm64.stamp: .container/base/deps/java/temurin/arm
 
 PREREQUISITES += .container/base/deps/java/temurin/25/arm64.hash.deps
 
-$(FETCH_PATH)/.temurin.27.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+$(FETCH_PATH)/.temurin.27.0.1.0.2.amd64.stamp: .container/base/deps/java/temurin/amd64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
 
-.container/base/deps/java/temurin/27/amd64.hash.deps: $(FETCH_PATH)/.temurin.27.amd64.stamp
+.container/base/deps/java/temurin/27/amd64.hash.deps: $(FETCH_PATH)/.temurin.27.0.1.0.2.amd64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=amd64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/27/amd64.hash.deps
 
-$(FETCH_PATH)/.temurin.27.arm64.stamp: .container/base/deps/java/temurin/arm64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+$(FETCH_PATH)/.temurin.27.0.1.0.2.arm64.stamp: .container/base/deps/java/temurin/arm64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
 
-.container/base/deps/java/temurin/27/arm64.hash.deps: $(FETCH_PATH)/.temurin.27.arm64.stamp
+.container/base/deps/java/temurin/27/arm64.hash.deps: $(FETCH_PATH)/.temurin.27.0.1.0.2.arm64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=arm64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/27/arm64.hash.deps
 
-$(FETCH_PATH)/.temurin.27.riscv64.stamp: .container/base/deps/java/temurin/27/riscv64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
+$(FETCH_PATH)/.temurin.27.0.1.0.2.riscv64.stamp: .container/base/deps/java/temurin/27/riscv64.url.deps .container/base/deps/java/temurin/27/version.deps .container/base/deps/java/temurin/27/build.deps
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=riscv64 .makefile/container/scripts/fetch.sh java/temurin
 	touch $@
 
-.container/base/deps/java/temurin/27/riscv64.hash.deps: $(FETCH_PATH)/.temurin.27.riscv64.stamp
+.container/base/deps/java/temurin/27/riscv64.hash.deps: $(FETCH_PATH)/.temurin.27.0.1.0.2.riscv64.stamp
 	M6E_DEPS_STAGE=base M6E_SERIES=27 TARGETARCH=riscv64 .makefile/container/scripts/update-hash.sh java/temurin
 
 PREREQUISITES += .container/base/deps/java/temurin/27/riscv64.hash.deps
