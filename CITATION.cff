@@ -32,5 +32,5 @@ keywords:
   - openjdk
   - temurin
   - jmx
-version: 0.8.7
-date-released: "2026-11-13"
+version: 0.8.8
+date-released: "2026-11-17"
